@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './../components/navbar.jsx'
-import "./Home.css"
+
 const Home = () => {
   return (
     <div>
