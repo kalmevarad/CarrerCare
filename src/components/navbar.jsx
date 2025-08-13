@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
-const navbar = () => {
+import defaultuser from "../assets/img/user.png";
+
+const Navbar = () => {
+  const [userImg, setUserImg] = useState("");
   const location = useLocation();
 
-  //retriving the data from local stroage if exist
   const data = JSON.parse(localStorage.getItem("userdata") || "null");
+
+  useEffect(() => {
+    const storedImg = localStorage.getItem("userImage");
+    if (storedImg) setUserImg(storedImg);
+  });
 
   return (
     <div className="navbar">
@@ -19,9 +26,9 @@ const navbar = () => {
         </Link>
         <Link
           to="/carrer"
-          className={location.pathname === "/carre" ? "active" : "navbar-item"}
+          className={location.pathname === "/carrer" ? "active" : "navbar-item"}
         >
-          Carrer
+          Career
         </Link>
         <Link
           to="/courses"
@@ -29,23 +36,32 @@ const navbar = () => {
             location.pathname === "/courses" ? "active" : "navbar-item"
           }
         >
-          courses
+          Courses
         </Link>
         <Link
           to="/about"
           className={location.pathname === "/about" ? "active" : "navbar-item"}
         >
-          about
+          About
         </Link>
         <Link
           to={data ? "/user" : "/login"}
-          className={location.pathname === "/login" ? "active" : "navbar-item"}
+          className={
+            location.pathname === (data ? "/user" : "/login")
+              ? "active"
+              : "navbar-item"
+          }
         >
-          {data ? data.name : "Login"}
+          <div className="navbar-user-info">
+            {(userImg && (
+              <img src={userImg} alt=" actual User" className="nav-user-img" />
+            )) || <img src={defaultuser} alt="default User" className="nav-user-img" />}
+            {data ? data.name : "Login"}
+          </div>
         </Link>
       </div>
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;

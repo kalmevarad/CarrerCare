@@ -26,10 +26,12 @@
   width: 80%;
   padding: 10px;
   margin: 5px;
+  cursor: pointer;
 }
 .form-group details summary {
   color: purple;
   font-weight: 600;
+  cursor:pointer;
 }
 /* actual resume */
 .actual-resume {

@@ -10,6 +10,7 @@ import DownloadBtn from "../components/DownloadResume.jsx"
 import Reset from "../components/resetbtn.jsx"
 import { useState, useEffect,useRef } from "react";
 import Input from "../components/input.jsx";
+import { ImageUp } from "lucide-react";
 
 const resume = () => {
   const [name, setName] = useState("");
@@ -72,6 +73,13 @@ const resume = () => {
     startingDate: "",
     endingDate: "",
   });
+  //retriving local storage image
+useEffect(()=>{
+  const storedImg = localStorage.getItem("userImage");
+    if (storedImg) {
+      setImg(storedImg);
+    }
+})
   // downloading the resume
     const captureRef = useRef(null);
   return (
@@ -95,13 +103,19 @@ const resume = () => {
           <Input
             type="file"
             heading="Profile picture"
-            placeholder="upload the image"
             onChange={(e) => {
-              const file = e.target.files[0];
-              if(file)
-                setImg(URL.createObjectURL(file))
-            }}
-          />
+                const file = e.target.files[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                    const base64String = reader.result;
+                    setImg(base64String);
+                    localStorage.setItem("userImage", base64String); 
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
+          /> 
           </details>
            <details>
             {/* summary */}

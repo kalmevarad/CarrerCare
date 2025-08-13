@@ -44,6 +44,17 @@
   padding: 5px;
   border-bottom: 2px solid white;
 }
+.navbar-user-info
+{
+  display:flex;
+  gap:10px;
+}
+.nav-user-img
+{
+  height:30px;
+  width:30px;
+  border-radius:50%;
+}
 @media (max-width: 650px) {
   .navbar-item {
     font-size: 15px;

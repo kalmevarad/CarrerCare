@@ -4,40 +4,58 @@ import Navbar from "./../components/navbar.jsx";
 import { Link } from "react-router-dom";
 import "./user.css";
 import Button from "../components/button.jsx";
-import Input from "../components/input.jsx";
-
+import DefaultUser from "../assets/img/user.png";
+import { ImageUp } from "lucide-react";
 
 const User = () => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({});
   const [userImg, setUserImg] = useState("");
   //retriving the data if exist
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("userdata") || "null");
+    const data = JSON.parse(localStorage.getItem("userdata"));
     setUser(data);
-  }, []);
 
-  const { name } = user;
+    const storedImg = localStorage.getItem("userImage");
+    if (storedImg) {
+      setUserImg(storedImg);
+    }
+  }, []);
+const handleLOgOUt = ()=>
+{
+ localStorage.removeItem("userdata");
+ localStorage.removeItem("userImage");
+window.location.replace("/");
+
+}
+  const { name } = user || {};
 
   return (
     <div>
       <Navbar />
       <div className="user-container">
         <div className="userData">
-         <div className="userImage">
-           <img src={userImg} alt="user image"/>
-         </div>
-          <Input
-            type="file"
-            heading="upload the image"
-            placeholder="upload the image"
-            onChange={(e)=>{
-              const file = e.target.files[0];
-              if(file)
-              {
-                setUserImg(URL.createObjectURL(file));
-              }
-            }}
-          />
+          <div
+            className="userImage"
+            style={{ backgroundImage: `URL(${userImg || DefaultUser})` }}
+          ></div>
+          <div className="upladImg">
+            <input
+              type="file"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                    const base64String = reader.result;
+                    setUserImg(base64String);
+                    localStorage.setItem("userImage", base64String); 
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
+            />
+            <ImageUp size={30} />
+          </div>
           <h1>hello , {name}</h1>
         </div>
         <div className="user-Suggessions">
@@ -48,6 +66,7 @@ const User = () => {
             <Button name="Resume" />
           </Link>
         </div>
+      <button className="log-out" type="button" onClick={handleLOgOUt}>Log Out</button>
       </div>
     </div>
   );
