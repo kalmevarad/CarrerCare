@@ -77,7 +77,11 @@
 
 .social-links a {
   margin: 0 8px;
+   display:inline-flex;
+   justify-content: center;
   color: #333;
+  align-items: center;
+  gap: 8px;
   transition: color 0.3s ease;
 }
 

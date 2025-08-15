@@ -35,6 +35,7 @@ const signin = () => {
     localStorage.setItem("userdata", JSON.stringify(data));
     toast.success("account created");
    setData({ name: "", password: "", confirmPassword: "" });
+   window.location.replace("/login");
   };
 
   return (

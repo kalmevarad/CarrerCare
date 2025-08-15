@@ -1,10 +1,13 @@
 .personal-detail-heading {
   font-size: 25px;
   font-weight: 600;
+  color:purple;
+  margin-left:10px;
 }
 .personal-detail-heading-s
 {
   font-size:20px;
+  color:purple;
 }
 @media (max-width: 900px) {
   .personal-detail-heading {

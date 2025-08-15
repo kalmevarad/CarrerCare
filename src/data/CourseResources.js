@@ -1,341 +1,551 @@
-const courses = [
-  {
-  title: "Android Fundamentals",
-  description: "Start building Android apps with Java and XML.",
+const courses = [{
+  title: "HTML & CSS Fundamentals",
+  description: "Learn the core building blocks of web development, starting with HTML for structure and CSS for styling.",
+  category: "Web Development",
+  resources: [
+    { url: "https://www.freecodecamp.org/learn/responsive-web-design/", type: "Free" },
+    { url: "https://www.udemy.com/course/html-and-css-for-beginners-crash-course-learn-fast-easy/", type: "Paid" }
+  ]
+},
+{
+  title: "JavaScript Essentials",
+  description: "Master the fundamentals of JavaScript, the programming language of the web.",
+  category: "Web Development",
+  resources: [
+    { url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", type: "Free" },
+    { url: "https://www.udemy.com/course/the-complete-javascript-course/", type: "Paid" }
+  ]
+},
+{
+  title: "Responsive Web Design",
+  description: "Learn to create web pages that look great on all devices using CSS media queries and frameworks.",
+  category: "Web Development",
+  resources: [
+    { url: "https://web.dev/learn/design/", type: "Free" },
+    { url: "https://www.udemy.com/course/responsive-web-design-tutorial-course-html5-css3-bootstrap/", type: "Paid" }
+  ]
+},
+{
+  title: "Version Control with Git",
+  description: "Learn how to use Git and GitHub for version control and collaboration in web projects.",
+  category: "Web Development",
+  resources: [
+    { url: "https://git-scm.com/doc", type: "Free" },
+    { url: "https://www.udemy.com/course/git-complete/", type: "Paid" }
+  ]
+},
+{
+  title: "Web Performance Optimization",
+  description: "Understand techniques to improve website speed, accessibility, and SEO.",
+  category: "Web Development",
+  resources: [
+    { url: "https://web.dev/learn/performance/", type: "Free" },
+    { url: "https://www.udemy.com/course/website-performance-optimization/", type: "Paid" }
+  ]
+},
+{
+  title: "Modern Frontend Frameworks",
+  description: "Get started with frameworks like React, Vue, and Angular to build interactive web applications.",
+  category: "Web Development",
+  resources: [
+    { url: "https://react.dev/learn", type: "Free" },
+    { url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", type: "Paid" }
+  ]
+},{
+  title: "Android Development for Beginners",
+  description: "Learn to build Android apps using Java and Android Studio, starting from the basics.",
   category: "Android Development",
   resources: [
-    { url: "https://developer.android.com/courses", type: "Free" }
-  ]
-},
-{
-  title: "Intro to Machine Learning",
-  description: "Understand the basics of ML, including supervised and unsupervised learning.",
-  category: "ML",
-  resources: [
-    { url: "https://www.coursera.org/learn/machine-learning", type: "Paid" },
-    { url: "https://www.udemy.com/course/machinelearning/", type: "Paid" }
-  ]
-},
-{
-  title: "Frontend Developer Bootcamp",
-  description: "Master HTML, CSS, JavaScript, and responsive web design.",
-  category: "Web Development",
-  resources: [
-    { url: "https://www.freecodecamp.org/learn", type: "Free" }
-  ]
-},
-{
-  title: "Modern JavaScript (ES6+)",
-  description: "Understand modern JavaScript concepts and features for web apps.",
-  category: "Web Development",
-  resources: [
-    { url: "https://javascript.info/", type: "Free" }
-  ]
-},
-{
-  title: "Full Stack Open",
-  description: "Learn to build full-stack web applications with React, Node.js, and MongoDB.",
-  category: "Web Development",
-  resources: [
-    { url: "https://fullstackopen.com/en/", type: "Free" }
-  ]
-},
-{
-  title: "Jetpack Compose Basics",
-  description: "Learn modern Android UI development using Jetpack Compose.",
-  category: "Android Development",
-  resources: [
-    { url: "https://developer.android.com/jetpack/compose", type: "Free" }
+    { url: "https://developer.android.com/courses/android-basics-compose/course", type: "Free" },
+    { url: "https://www.udemy.com/course/android-app-development-for-beginners/", type: "Paid" }
   ]
 },
 {
   title: "Kotlin for Android",
-  description: "Build Android apps with Kotlin, the modern language for Android.",
+  description: "Master Kotlin, the preferred language for modern Android development.",
   category: "Android Development",
   resources: [
-    { url: "https://developer.android.com/kotlin", type: "Free" }
+    { url: "https://developer.android.com/kotlin", type: "Free" },
+    { url: "https://www.udemy.com/course/kotlin-android-developer-masterclass/", type: "Paid" }
   ]
 },
 {
+  title: "Jetpack Compose Fundamentals",
+  description: "Learn Jetpack Compose, Android's modern toolkit for building native UI.",
+  category: "Android Development",
+  resources: [
+    { url: "https://developer.android.com/jetpack/compose/tutorial", type: "Free" },
+    { url: "https://www.udemy.com/course/jetpack-compose-android-development/", type: "Paid" }
+  ]
+},
+{
+  title: "Android App Architecture",
+  description: "Understand MVVM architecture, LiveData, ViewModel, and Room database in Android apps.",
+  category: "Android Development",
+  resources: [
+    { url: "https://developer.android.com/jetpack/guide", type: "Free" },
+    { url: "https://www.udemy.com/course/android-architecture-componentsmvvm-viewmodel-livedata-room/", type: "Paid" }
+  ]
+},
+{
+  title: "Publishing on Google Play Store",
+  description: "Learn how to prepare, test, and publish your Android app on Google Play.",
+  category: "Android Development",
+  resources: [
+    { url: "https://developer.android.com/distribute", type: "Free" },
+    { url: "https://www.udemy.com/course/publish-your-android-app-on-google-play-store/", type: "Paid" }
+  ]
+},
+{
+  title: "Advanced Android Development",
+  description: "Explore advanced Android features like background services, sensors, and APIs.",
+  category: "Android Development",
+  resources: [
+    { url: "https://developer.android.com/guide", type: "Free" },
+    { url: "https://www.udemy.com/course/advanced-android-app-development/", type: "Paid" }
+  ]
+},{
   title: "Introduction to Artificial Intelligence",
-  description: "Learn the fundamentals of AI, including machine learning, neural networks, and real-world applications.",
+  description: "Understand the basics of AI, its history, and applications in various fields.",
   category: "AI",
   resources: [
-    { url: "https://www.ibm.com/cloud/learn/what-is-artificial-intelligence", type: "Free" },
-    { url: "https://developers.google.com/machine-learning/crash-course", type: "Free" }
+    { url: "https://www.coursera.org/learn/introduction-to-ai", type: "Free" },
+    { url: "https://www.udemy.com/course/artificial-intelligence-az/", type: "Paid" }
   ]
 },
 {
-  title: "Machine Learning Basics",
-  description: "Understand supervised, unsupervised, and reinforcement learning, along with key algorithms and use cases.",
+  title: "Machine Learning with Python",
+  description: "Learn core machine learning concepts and implement them using Python libraries.",
   category: "AI",
   resources: [
-    { url: "https://www.coursera.org/learn/machine-learning", type: "Paid" },
-    { url: "https://scikit-learn.org/stable/user_guide.html", type: "Free" }
+    { url: "https://scikit-learn.org/stable/tutorial/index.html", type: "Free" },
+    { url: "https://www.udemy.com/course/machinelearning/", type: "Paid" }
   ]
 },
 {
-  title: "Deep Learning with Neural Networks",
-  description: "Dive into deep learning concepts including CNNs, RNNs, and transformers, and learn how to build AI models.",
+  title: "Deep Learning Fundamentals",
+  description: "Explore neural networks, CNNs, RNNs, and deep learning frameworks like TensorFlow.",
   category: "AI",
   resources: [
-    { url: "https://www.deeplearning.ai/", type: "Paid" },
-    { url: "https://pytorch.org/tutorials/", type: "Free" }
+    { url: "https://www.deeplearning.ai/courses/deep-learning-specialization/", type: "Free" },
+    { url: "https://www.udemy.com/course/deeplearning/", type: "Paid" }
   ]
 },
 {
   title: "Natural Language Processing (NLP)",
-  description: "Explore techniques for text processing, sentiment analysis, and chatbot creation using AI.",
+  description: "Learn to process and analyze text data using NLP libraries and models.",
   category: "AI",
   resources: [
-    { url: "https://huggingface.co/transformers/", type: "Free" },
-    { url: "https://www.nltk.org/", type: "Free" }
+    { url: "https://web.stanford.edu/~jurafsky/NLP.html", type: "Free" },
+    { url: "https://www.udemy.com/course/nlp-natural-language-processing-with-python/", type: "Paid" }
   ]
 },
 {
-  title: "AI Ethics and Responsible AI",
-  description: "Understand the ethical challenges, bias issues, and best practices for building responsible AI systems.",
+  title: "Computer Vision Basics",
+  description: "Understand image processing, object detection, and recognition using OpenCV.",
   category: "AI",
   resources: [
-    { url: "https://ethicsinaction.ieee.org/", type: "Free" },
-    { url: "https://ai.google/responsibility/", type: "Free" }
+    { url: "https://docs.opencv.org/master/d9/df8/tutorial_root.html", type: "Free" },
+    { url: "https://www.udemy.com/course/computer-vision-a-z/", type: "Paid" }
   ]
 },
 {
-  title: "Deep Learning Specialization",
-  description: "Master deep learning, neural networks, and backpropagation.",
+  title: "AI in Real-world Applications",
+  description: "Learn how AI is used in healthcare, finance, robotics, and other industries.",
+  category: "AI",
+  resources: [
+    { url: "https://www.edx.org/course/artificial-intelligence-ai", type: "Free" },
+    { url: "https://www.udemy.com/course/artificial-intelligence-real-world-projects/", type: "Paid" }
+  ]
+},{
+  title: "Machine Learning Fundamentals",
+  description: "Learn the core concepts of machine learning, including supervised and unsupervised learning.",
   category: "ML",
   resources: [
-    { url: "https://www.coursera.org/specializations/deep-learning", type: "Paid" }
+    { url: "https://www.coursera.org/learn/machine-learning", type: "Free" },
+    { url: "https://www.udemy.com/course/machinelearning/", type: "Paid" }
   ]
 },
 {
-  title: "AI For Everyone",
-  description: "Non-technical course introducing the concepts and impact of AI.",
+  title: "Supervised Learning Techniques",
+  description: "Dive deeper into regression, classification, and model evaluation methods.",
   category: "ML",
   resources: [
-    { url: "https://www.coursera.org/learn/ai-for-everyone", type: "Paid" }
+    { url: "https://scikit-learn.org/stable/supervised_learning.html", type: "Free" },
+    { url: "https://www.udemy.com/course/supervised-machine-learning/", type: "Paid" }
   ]
 },
 {
+  title: "Unsupervised Learning and Clustering",
+  description: "Explore clustering methods like K-Means, DBSCAN, and dimensionality reduction techniques.",
+  category: "ML",
+  resources: [
+    { url: "https://scikit-learn.org/stable/unsupervised_learning.html", type: "Free" },
+    { url: "https://www.udemy.com/course/unsupervised-machine-learning/", type: "Paid" }
+  ]
+},
+{
+  title: "Model Deployment and MLOps",
+  description: "Learn how to deploy ML models into production with Docker, Flask, and cloud services.",
+  category: "ML",
+  resources: [
+    { url: "https://www.tensorflow.org/tfx/tutorials", type: "Free" },
+    { url: "https://www.udemy.com/course/mlops-machine-learning-operations/", type: "Paid" }
+  ]
+},
+{
+  title: "Feature Engineering",
+  description: "Understand techniques for extracting, selecting, and transforming features to improve model performance.",
+  category: "ML",
+  resources: [
+    { url: "https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/", type: "Free" },
+    { url: "https://www.udemy.com/course/feature-engineering-for-machine-learning/", type: "Paid" }
+  ]
+},
+{
+  title: "ML Project Case Studies",
+  description: "Work on real-world ML problems and datasets to gain practical experience.",
+  category: "ML",
+  resources: [
+    { url: "https://www.kaggle.com/learn/intro-to-machine-learning", type: "Free" },
+    { url: "https://www.udemy.com/course/real-world-machine-learning-projects/", type: "Paid" }
+  ]
+},{
   title: "Introduction to IoT",
-  description: "Learn the foundations of Internet of Things and its real-world applications.",
+  description: "Understand the fundamentals of the Internet of Things, its architecture, and use cases.",
   category: "IoT",
   resources: [
-    { url: "https://www.coursera.org/learn/iot", type: "Paid" }
+    { url: "https://www.coursera.org/learn/iot", type: "Free" },
+    { url: "https://www.udemy.com/course/introduction-to-internet-of-things-iot/", type: "Paid" }
   ]
 },
 {
-  title: "IoT Networking and Protocols",
-  description: "Explore communication protocols used in IoT devices and systems.",
+  title: "IoT with Arduino",
+  description: "Learn how to build IoT projects using Arduino microcontrollers and sensors.",
   category: "IoT",
   resources: [
-    { url: "https://www.edx.org/course/iot-communications", type: "Paid" }
+    { url: "https://create.arduino.cc/projecthub", type: "Free" },
+    { url: "https://www.udemy.com/course/arduino-step-by-step-more-than-50-hours-complete-course/", type: "Paid" }
   ]
 },
 {
-  title: "Arduino Programming for IoT",
-  description: "Build IoT projects using Arduino and sensor modules.",
+  title: "IoT with Raspberry Pi",
+  description: "Build IoT applications using Raspberry Pi, Python, and various IoT sensors.",
   category: "IoT",
   resources: [
-    { url: "https://create.arduino.cc/projecthub", type: "Free" }
+    { url: "https://projects.raspberrypi.org/en/projects", type: "Free" },
+    { url: "https://www.udemy.com/course/raspberry-pi-full-stack/", type: "Paid" }
+  ]
+},
+{
+  title: "IoT Communication Protocols",
+  description: "Explore protocols like MQTT, CoAP, and HTTP used in IoT systems.",
+  category: "IoT",
+  resources: [
+    { url: "https://mqtt.org/getting-started/", type: "Free" },
+    { url: "https://www.udemy.com/course/mqtt-essentials/", type: "Paid" }
+  ]
+},
+{
+  title: "IoT Security",
+  description: "Learn the security challenges and solutions in IoT systems.",
+  category: "IoT",
+  resources: [
+    { url: "https://www.coursera.org/learn/iot-security", type: "Free" },
+    { url: "https://www.udemy.com/course/internet-of-things-security-iot-security/", type: "Paid" }
+  ]
+},
+{
+  title: "Industrial IoT",
+  description: "Understand how IoT is transforming industries through automation and data collection.",
+  category: "IoT",
+  resources: [
+    { url: "https://www.ibm.com/topics/iiot", type: "Free" },
+    { url: "https://www.udemy.com/course/industrial-iot-for-beginners/", type: "Paid" }
+  ]
+},
+{
+  title: "IoT Cloud Integration",
+  description: "Learn how to connect IoT devices to AWS, Azure, or Google Cloud.",
+  category: "IoT",
+  resources: [
+    { url: "https://aws.amazon.com/iot-core/getting-started/", type: "Free" },
+    { url: "https://www.udemy.com/course/iot-integration-with-cloud-computing/", type: "Paid" }
+  ]
+},{
+  title: "Data Science Fundamentals",
+  description: "Learn the basics of data science, including data collection, cleaning, and analysis.",
+  category: "Data Science",
+  resources: [
+    { url: "https://www.coursera.org/learn/what-is-datascience", type: "Free" },
+    { url: "https://www.udemy.com/course/data-science-and-machine-learning-bootcamp-with-r/", type: "Paid" }
   ]
 },
 {
   title: "Python for Data Science",
-  description: "Analyze data using Python libraries like Pandas and NumPy.",
+  description: "Use Python libraries like Pandas, NumPy, and Matplotlib for data analysis.",
   category: "Data Science",
   resources: [
-    { url: "https://www.datacamp.com/courses/intro-to-python-for-data-science", type: "Paid" }
+    { url: "https://www.kaggle.com/learn/python", type: "Free" },
+    { url: "https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/", type: "Paid" }
   ]
 },
 {
-  title: "Data Science Specialization",
-  description: "Comprehensive program covering R, data wrangling, and visualization.",
+  title: "Data Visualization",
+  description: "Master data visualization tools like Tableau, Power BI, and Matplotlib.",
   category: "Data Science",
   resources: [
-    { url: "https://www.coursera.org/specializations/jhu-data-science", type: "Paid" }
+    { url: "https://public.tableau.com/en-us/s/resources", type: "Free" },
+    { url: "https://www.udemy.com/course/tableau10/", type: "Paid" }
   ]
 },
 {
-  title: "SQL for Data Analysis",
-  description: "Learn to query and analyze data using SQL.",
+  title: "Statistics for Data Science",
+  description: "Understand statistical concepts essential for data science applications.",
   category: "Data Science",
   resources: [
-    { url: "https://mode.com/sql-tutorial/", type: "Free" }
+    { url: "https://www.khanacademy.org/math/statistics-probability", type: "Free" },
+    { url: "https://www.udemy.com/course/statistics-for-data-science-and-business-analysis/", type: "Paid" }
   ]
 },
 {
-  title: "Java Programming Masterclass",
-  description: "Become a Java developer by mastering Java SE from scratch.",
+  title: "Machine Learning Basics",
+  description: "Get introduced to supervised and unsupervised machine learning techniques.",
+  category: "Data Science",
+  resources: [
+    { url: "https://www.coursera.org/learn/machine-learning", type: "Free" },
+    { url: "https://www.udemy.com/course/machinelearning/", type: "Paid" }
+  ]
+},
+{
+  title: "Big Data Analytics",
+  description: "Learn big data tools like Hadoop and Spark for handling large datasets.",
+  category: "Data Science",
+  resources: [
+    { url: "https://spark.apache.org/", type: "Free" },
+    { url: "https://www.udemy.com/course/apache-spark-with-scala-hands-on-with-big-data/", type: "Paid" }
+  ]
+},
+{
+  title: "Data Science Project Deployment",
+  description: "Deploy data science models to production using Flask, FastAPI, or cloud platforms.",
+  category: "Data Science",
+  resources: [
+    { url: "https://fastapi.tiangolo.com/", type: "Free" },
+    { url: "https://www.udemy.com/course/deployment-of-machine-learning-models/", type: "Paid" }
+  ]
+},{
+  title: "Java Programming Fundamentals",
+  description: "Learn the basics of Java, including syntax, data types, and control flow.",
   category: "Java Developer",
   resources: [
+    { url: "https://www.learnjavaonline.org/", type: "Free" },
     { url: "https://www.udemy.com/course/java-the-complete-java-developer-course/", type: "Paid" }
   ]
 },
 {
-  title: "Spring Boot for Beginners",
-  description: "Build Java backend applications using Spring Boot framework.",
+  title: "Object-Oriented Programming in Java",
+  description: "Master OOP concepts like inheritance, polymorphism, and encapsulation in Java.",
   category: "Java Developer",
   resources: [
-    { url: "https://spring.io/guides", type: "Free" }
+    { url: "https://www.javatpoint.com/java-oops-concepts", type: "Free" },
+    { url: "https://www.udemy.com/course/java-object-oriented-programming/", type: "Paid" }
   ]
 },
 {
-  title: "DSA in Java",
-  description: "Learn Data Structures and Algorithms in Java for coding interviews.",
+  title: "Java Collections Framework",
+  description: "Learn how to use Java’s Collections API for efficient data handling.",
   category: "Java Developer",
   resources: [
-    { url: "https://www.geeksforgeeks.org/data-structures/", type: "Free" }
+    { url: "https://www.baeldung.com/java-collections", type: "Free" },
+    { url: "https://www.udemy.com/course/java-collections-framework/", type: "Paid" }
   ]
-}
-,
-  {
-    title: "HTML & CSS Basics",
-    description: "Master the core building blocks of web development, including HTML structure and CSS styling.",
-    category: "Frontend Development",
-    resources: [
-      { url: "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web", type: "Free" },
-      { url: "https://www.w3schools.com/html/", type: "Free" }
-    ]
-  }, // Free
-
+},
 {
-  title: "JavaScript Fundamentals",
-  description: "Learn the essential concepts of JavaScript, the programming language of the web.",
+  title: "Java Multithreading and Concurrency",
+  description: "Understand multithreading, concurrency, and parallel programming in Java.",
+  category: "Java Developer",
+  resources: [
+    { url: "https://www.baeldung.com/java-concurrency", type: "Free" },
+    { url: "https://www.udemy.com/course/java-multithreading-concurrency-performance-optimization/", type: "Paid" }
+  ]
+},
+{
+  title: "Spring Framework Basics",
+  description: "Learn to build Java applications using the Spring framework.",
+  category: "Java Developer",
+  resources: [
+    { url: "https://spring.io/guides", type: "Free" },
+    { url: "https://www.udemy.com/course/spring-framework-for-beginners/", type: "Paid" }
+  ]
+},
+{
+  title: "Spring Boot for Java Developers",
+  description: "Create production-ready Java applications using Spring Boot.",
+  category: "Java Developer",
+  resources: [
+    { url: "https://spring.io/projects/spring-boot", type: "Free" },
+    { url: "https://www.udemy.com/course/spring-boot-tutorial-for-beginners/", type: "Paid" }
+  ]
+},
+{
+  title: "Java Database Connectivity (JDBC)",
+  description: "Learn how to connect and interact with databases using JDBC.",
+  category: "Java Developer",
+  resources: [
+    { url: "https://www.javatpoint.com/java-jdbc", type: "Free" },
+    { url: "https://www.udemy.com/course/jdbc-and-java-database-integration-for-beginners/", type: "Paid" }
+  ]
+},
+// Removed duplicate 'HTML & CSS Fundamentals' from Frontend Development
+{
+  title: "JavaScript Basics",
+  description: "Understand JavaScript syntax, variables, functions, and DOM manipulation.",
   category: "Frontend Development",
   resources: [
     { url: "https://javascript.info/", type: "Free" },
-    { url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", type: "Free" }
+    { url: "https://www.udemy.com/course/the-complete-javascript-course/", type: "Paid" }
   ]
-}, // Free
-
+},
+// Removed duplicate 'Responsive Web Design' from Frontend Development
 {
-  title: "Responsive Web Design",
-  description: "Understand how to make web pages look great on all devices using media queries and flexible layouts.",
+  title: "React.js Fundamentals",
+  description: "Learn the basics of building interactive UIs with React.",
   category: "Frontend Development",
   resources: [
-    { url: "https://www.freecodecamp.org/learn/responsive-web-design/", type: "Free" },
-    { url: "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design", type: "Free" }
+    { url: "https://react.dev/learn", type: "Free" },
+    { url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", type: "Paid" }
   ]
-}, // Free
-
-
+},
 {
-  title: "Advanced CSS and Sass",
-  description: "Enhance your styling skills with advanced CSS techniques and Sass for maintainable code.",
+  title: "Advanced JavaScript (ES6+)",
+  description: "Master ES6+ features like arrow functions, destructuring, and modules.",
   category: "Frontend Development",
   resources: [
-    { url: "https://sass-lang.com/guide", type: "Free" },
-    { url: "https://css-tricks.com/snippets/css/complete-guide-grid/", type: "Free" }
+    { url: "https://www.javascripttutorial.net/es6/", type: "Free" },
+    { url: "https://www.udemy.com/course/modern-javascript-es6-basics-to-advanced/", type: "Paid" }
   ]
-}, // Free
-
+},
 {
-  title: "Web Accessibility",
-  description: "Learn how to make your websites usable by people of all abilities.",
+  title: "CSS Frameworks (Bootstrap & Tailwind CSS)",
+  description: "Speed up development using popular CSS frameworks.",
   category: "Frontend Development",
   resources: [
-    { url: "https://www.w3.org/WAI/fundamentals/accessibility-intro/", type: "Free" },
-    { url: "https://developer.mozilla.org/en-US/docs/Learn/Accessibility", type: "Free" }
+    { url: "https://getbootstrap.com/docs/", type: "Free" },
+    { url: "https://www.udemy.com/course/tailwind-css-from-scratch/", type: "Paid" }
   ]
-}, // Free,
+},
+// Removed duplicate 'Version Control with Git' from Frontend Development
 {
-  title: "Node.js Fundamentals",
-  description: "Learn how to build backend applications using Node.js and understand the basics of server-side JavaScript.",
+  title: "Node.js Basics",
+  description: "Learn server-side JavaScript development with Node.js.",
   category: "Backend Development",
   resources: [
     { url: "https://nodejs.dev/en/learn/", type: "Free" },
-    { url: "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/", type: "Paid" }
+    { url: "https://www.udemy.com/course/nodejs-the-complete-guide/", type: "Paid" }
   ]
-}, // Paid
-
+},
 {
-  title: "Express.js Crash Course",
-  description: "Get started with Express.js, the fast and minimalist web framework for Node.js.",
+  title: "Express.js Framework",
+  description: "Build robust backend applications using Express.js.",
   category: "Backend Development",
   resources: [
-    { url: "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction", type: "Free" },
-    { url: "https://www.youtube.com/watch?v=L72fhGm1tfE", type: "Free" }
+    { url: "https://expressjs.com/en/starter/installing.html", type: "Free" },
+    { url: "https://www.udemy.com/course/expressjs-the-complete-guide/", type: "Paid" }
   ]
-}, // Free
-
-{
-  title: "REST API Development",
-  description: "Learn to design and build RESTful APIs using backend technologies.",
-  category: "Backend Development",
-  resources: [
-    { url: "https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/", type: "Free" },
-    { url: "https://www.udemy.com/course/rest-api-design-the-complete-guide/", type: "Paid" }
-  ]
-}, // Paid
-
+},
 {
   title: "Databases with MongoDB",
-  description: "Master MongoDB for building modern, scalable applications.",
+  description: "Work with NoSQL databases using MongoDB and Mongoose.",
   category: "Backend Development",
   resources: [
-    { url: "https://www.mongodb.com/docs/manual/tutorial/getting-started/", type: "Free" },
+    { url: "https://www.mongodb.com/docs/", type: "Free" },
     { url: "https://www.udemy.com/course/mongodb-the-complete-developers-guide/", type: "Paid" }
   ]
-}, // Paid
-
+},
+{
+  title: "REST API Development",
+  description: "Design and implement RESTful APIs for backend services.",
+  category: "Backend Development",
+  resources: [
+    { url: "https://restfulapi.net/", type: "Free" },
+    { url: "https://www.udemy.com/course/rest-api-design-nodejs-api-development/", type: "Paid" }
+  ]
+},
 {
   title: "Authentication & Authorization",
-  description: "Understand how to secure backend applications with JWT, OAuth, and other methods.",
+  description: "Implement secure login systems with JWT, OAuth, and sessions.",
   category: "Backend Development",
   resources: [
-    { url: "https://www.digitalocean.com/community/tutorial_series/oauth-2-0", type: "Free" },
-    { url: "https://www.udemy.com/course/nodejs-jwt-authentication-oauth/", type: "Paid" }
+    { url: "https://developer.okta.com/blog/2018/11/15/node-express-typescript", type: "Free" },
+    { url: "https://www.udemy.com/course/secure-nodejs-api-with-jwt-authentication/", type: "Paid" }
   ]
-}, // Paid
-
+},
+{
+  title: "SQL Databases (PostgreSQL/MySQL)",
+  description: "Learn how to manage and query relational databases.",
+  category: "Backend Development",
+  resources: [
+    { url: "https://www.postgresql.org/docs/", type: "Free" },
+    { url: "https://www.udemy.com/course/the-complete-sql-bootcamp/", type: "Paid" }
+  ]
+},
 {
   title: "Backend Deployment",
-  description: "Learn how to deploy backend applications to cloud platforms like Heroku, AWS, and Render.",
+  description: "Deploy backend applications to cloud platforms like Heroku and AWS.",
   category: "Backend Development",
   resources: [
-    { url: "https://devcenter.heroku.com/articles/getting-started-with-nodejs", type: "Free" },
-    { url: "https://www.udemy.com/course/aws-certified-developer-associate/", type: "Paid" }
+    { url: "https://devcenter.heroku.com/", type: "Free" },
+    { url: "https://www.udemy.com/course/deploying-nodejs-to-aws/", type: "Paid" }
   ]
-} // Paid
-,{
-  title: "Full Stack Web Development with React and Node.js",
-  description: "Learn to build complete web applications using React for the frontend and Node.js/Express for the backend.",
+},{
+  title: "Full Stack Web Development with MERN",
+  description: "Learn to build complete web apps using MongoDB, Express, React, and Node.js.",
   category: "Full Stack Development",
   resources: [
-    { url: "https://www.coursera.org/specializations/full-stack-react", type: "Paid" },
-    { url: "https://fullstackopen.com/en/", type: "Free" }
+    { url: "https://www.mongodb.com/mern-stack", type: "Free" },
+    { url: "https://www.udemy.com/course/mern-stack-front-to-back/", type: "Paid" }
   ]
 },
 {
-  title: "MERN Stack Crash Course",
-  description: "Get started with MongoDB, Express.js, React, and Node.js for building full-stack apps.",
+  title: "HTML, CSS & JavaScript Mastery",
+  description: "Master the core frontend technologies before diving into full stack.",
   category: "Full Stack Development",
   resources: [
-    { url: "https://www.youtube.com/watch?v=7CqJlxBYj-M", type: "Free" }
+    { url: "https://www.freecodecamp.org/learn", type: "Free" },
+    { url: "https://www.udemy.com/course/the-complete-web-development-bootcamp/", type: "Paid" }
   ]
 },
 {
-  title: "Django and React Full Stack",
-  description: "Build a modern full stack app using Django for backend and React for frontend.",
+  title: "React for Full Stack Developers",
+  description: "Create dynamic frontend interfaces with React.",
   category: "Full Stack Development",
   resources: [
-    { url: "https://www.udemy.com/course/django-with-react-an-ecommerce-website/", type: "Paid" }
+    { url: "https://react.dev/learn", type: "Free" },
+    { url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", type: "Paid" }
   ]
 },
 {
-  title: "Authentication in Full Stack Apps",
-  description: "Learn authentication and authorization flows in full stack applications.",
+  title: "Node.js & Express Backend",
+  description: "Build backend APIs to power full stack apps.",
   category: "Full Stack Development",
   resources: [
-    { url: "https://www.digitalocean.com/community/tutorials/oauth-2-0", type: "Free" },
-    { url: "https://www.udemy.com/course/full-stack-react-node-docker-mongodb-and-nginx/", type: "Paid" }
+    { url: "https://nodejs.dev/en/learn/", type: "Free" },
+    { url: "https://www.udemy.com/course/nodejs-the-complete-guide/", type: "Paid" }
   ]
 },
 {
-  title: "GraphQL for Full Stack Developers",
-  description: "Integrate GraphQL APIs in full stack projects for flexible data fetching.",
+  title: "Database Integration (MongoDB & SQL)",
+  description: "Store and retrieve app data efficiently using databases.",
+  category: "Full Stack Development",
+  resources: [
+    { url: "https://www.mongodb.com/docs/", type: "Free" },
+    { url: "https://www.udemy.com/course/sql-and-database-design/", type: "Paid" }
+  ]
+},
+{
+  title: "REST & GraphQL APIs",
+  description: "Learn both REST and GraphQL approaches to backend communication.",
   category: "Full Stack Development",
   resources: [
     { url: "https://graphql.org/learn/", type: "Free" },
@@ -344,34 +554,24 @@ const courses = [
 },
 {
   title: "Full Stack Deployment",
-  description: "Deploy full stack applications on platforms like Vercel, Heroku, and AWS.",
+  description: "Deploy full stack apps to platforms like Vercel, Netlify, and AWS.",
   category: "Full Stack Development",
   resources: [
     { url: "https://vercel.com/docs", type: "Free" },
-    { url: "https://www.udemy.com/course/deploying-web-applications/", type: "Paid" }
+    { url: "https://www.udemy.com/course/deploying-full-stack-apps/", type: "Paid" }
   ]
-},
-{
+},{
   title: "iOS Development with Swift",
-  description: "Learn to build native iOS apps using Swift and Xcode.",
+  description: "Learn the fundamentals of Swift programming for iOS app development.",
   category: "iOS Development",
   resources: [
-    { url: "https://developer.apple.com/learn/curriculum/", type: "Free" },
+    { url: "https://developer.apple.com/swift/resources/", type: "Free" },
     { url: "https://www.udemy.com/course/ios-13-app-development-bootcamp/", type: "Paid" }
   ]
 },
 {
-  title: "Swift Programming Fundamentals",
-  description: "Understand the basics of Swift programming language for iOS development.",
-  category: "iOS Development",
-  resources: [
-    { url: "https://www.hackingwithswift.com/100", type: "Free" },
-    { url: "https://www.udemy.com/course/swift-programming-for-beginners/", type: "Paid" }
-  ]
-},
-{
   title: "SwiftUI Essentials",
-  description: "Master building user interfaces with SwiftUI framework.",
+  description: "Create beautiful and responsive UIs with Apple's SwiftUI framework.",
   category: "iOS Development",
   resources: [
     { url: "https://developer.apple.com/tutorials/swiftui", type: "Free" },
@@ -379,349 +579,212 @@ const courses = [
   ]
 },
 {
-  title: "Core Data for iOS",
-  description: "Learn how to store and manage data locally in iOS apps with Core Data.",
-  category: "iOS Development",
-  resources: [
-    { url: "https://www.raywenderlich.com/7569-getting-started-with-core-data-tutorial", type: "Free" },
-    { url: "https://www.udemy.com/course/core-data-in-ios/", type: "Paid" }
-  ]
-},
-{
-  title: "iOS Networking with URLSession & Combine",
-  description: "Understand how to work with APIs and networking in iOS apps.",
-  category: "iOS Development",
-  resources: [
-    { url: "https://developer.apple.com/documentation/foundation/urlsession", type: "Free" },
-    { url: "https://www.udemy.com/course/networking-with-swift/", type: "Paid" }
-  ]
-},
-{
-  title: "UIKit for iOS",
-  description: "Learn to build interfaces and manage user interactions using UIKit.",
+  title: "UIKit Fundamentals",
+  description: "Understand UIKit to build powerful and custom iOS interfaces.",
   category: "iOS Development",
   resources: [
     { url: "https://developer.apple.com/documentation/uikit", type: "Free" },
-    { url: "https://www.udemy.com/course/uikit-fundamentals-for-ios-development/", type: "Paid" }
+    { url: "https://www.udemy.com/course/ios-12-app-development-bootcamp/", type: "Paid" }
   ]
 },
 {
-  title: "App Store Submission & Deployment",
-  description: "Learn how to prepare and submit iOS apps to the App Store.",
+  title: "Core Data & Persistence",
+  description: "Learn to store and manage data in iOS apps using Core Data.",
   category: "iOS Development",
   resources: [
-    { url: "https://developer.apple.com/ios/submit/", type: "Free" },
-    { url: "https://www.udemy.com/course/ios-app-store-submission-guide/", type: "Paid" }
+    { url: "https://developer.apple.com/documentation/coredata", type: "Free" },
+    { url: "https://www.udemy.com/course/core-data-in-ios-with-swift/", type: "Paid" }
   ]
 },
 {
-  title: "ARKit for iOS",
-  description: "Build augmented reality apps using Apple's ARKit framework.",
+  title: "iOS Networking",
+  description: "Fetch and send data over the internet using URLSession and REST APIs.",
   category: "iOS Development",
   resources: [
-    { url: "https://developer.apple.com/augmented-reality/", type: "Free" },
-    { url: "https://www.udemy.com/course/arkit-course/", type: "Paid" }
+    { url: "https://developer.apple.com/documentation/foundation/url_loading_system", type: "Free" },
+    { url: "https://www.udemy.com/course/ios-networking-with-swift/", type: "Paid" }
   ]
 },
 {
-  title: "Testing and Debugging in Xcode",
-  description: "Learn to test and debug iOS applications effectively using Xcode tools.",
+  title: "App Store Deployment",
+  description: "Learn how to prepare and publish your iOS app on the App Store.",
   category: "iOS Development",
   resources: [
-    { url: "https://developer.apple.com/documentation/xcode/testing-your-apps-in-simulator", type: "Free" },
-    { url: "https://www.udemy.com/course/unit-testing-in-ios-with-xctest/", type: "Paid" }
+    { url: "https://developer.apple.com/app-store/", type: "Free" },
+    { url: "https://www.udemy.com/course/app-store-optimization-course/", type: "Paid" }
   ]
 },
 {
+  title: "Advanced iOS Development",
+  description: "Master advanced concepts like Combine, ARKit, and ML integration.",
+  category: "iOS Development",
+  resources: [
+    { url: "https://developer.apple.com/documentation/", type: "Free" },
+    { url: "https://www.udemy.com/course/advanced-ios-app-development-with-swift/", type: "Paid" }
+  ]
+},{
   title: "Introduction to Cybersecurity",
-  description: "Understand the basics of cybersecurity, including threats, vulnerabilities, and defense strategies.",
+  description: "Understand the fundamentals of cybersecurity, threats, and defenses.",
   category: "Cybersecurity",
   resources: [
-    { url: "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/intro-cybersecurity.html", type: "Free" },
-    { url: "https://www.udemy.com/course/the-complete-cyber-security-course-hackers-exposed/", type: "Paid" }
+    { url: "https://www.coursera.org/learn/intro-cyber-security", type: "Free" },
+    { url: "https://www.udemy.com/course/cybersecurity-course/", type: "Paid" }
   ]
 },
 {
-  title: "Network Security Fundamentals",
-  description: "Learn how to protect networks from cyber threats using firewalls, VPNs, and intrusion detection systems.",
+  title: "Network Security Basics",
+  description: "Learn about firewalls, VPNs, intrusion detection, and securing networks.",
   category: "Cybersecurity",
   resources: [
-    { url: "https://www.cybrary.it/course/network-security-fundamentals/", type: "Free" },
-    { url: "https://www.udemy.com/course/network-security-course/", type: "Paid" }
+    { url: "https://www.geeksforgeeks.org/network-security/", type: "Free" },
+    { url: "https://www.udemy.com/course/network-security-fundamentals/", type: "Paid" }
   ]
 },
 {
-  title: "Ethical Hacking",
-  description: "Learn penetration testing techniques to identify and fix vulnerabilities.",
+  title: "Ethical Hacking for Beginners",
+  description: "Learn ethical hacking tools and penetration testing techniques.",
   category: "Cybersecurity",
   resources: [
-    { url: "https://www.hacker101.com/", type: "Free" },
+    { url: "https://www.coursera.org/specializations/penetration-testing", type: "Free" },
     { url: "https://www.udemy.com/course/learn-ethical-hacking-from-scratch/", type: "Paid" }
   ]
 },
 {
   title: "Web Application Security",
-  description: "Understand common web vulnerabilities like SQL injection, XSS, and CSRF, and how to prevent them.",
+  description: "Understand OWASP Top 10 vulnerabilities and how to secure web apps.",
   category: "Cybersecurity",
   resources: [
     { url: "https://owasp.org/www-project-top-ten/", type: "Free" },
-    { url: "https://www.udemy.com/course/web-application-security-testing/", type: "Paid" }
+    { url: "https://www.udemy.com/course/web-application-security-for-beginners/", type: "Paid" }
   ]
 },
 {
-  title: "Cloud Security",
-  description: "Learn to secure cloud environments like AWS, Azure, and Google Cloud.",
+  title: "Cloud Security Essentials",
+  description: "Learn to secure cloud-based infrastructure and services.",
   category: "Cybersecurity",
   resources: [
     { url: "https://aws.amazon.com/security/", type: "Free" },
-    { url: "https://www.udemy.com/course/aws-certified-security-specialty/", type: "Paid" }
+    { url: "https://www.udemy.com/course/cloud-security-fundamentals/", type: "Paid" }
   ]
 },
 {
-  title: "Digital Forensics",
-  description: "Master techniques for investigating cybercrimes and collecting digital evidence.",
+  title: "Incident Response and Forensics",
+  description: "Master the process of detecting, responding to, and recovering from attacks.",
   category: "Cybersecurity",
   resources: [
-    { url: "https://www.coursera.org/learn/digital-forensics", type: "Free" },
-    { url: "https://www.udemy.com/course/digital-forensics-masterclass/", type: "Paid" }
+    { url: "https://www.cisa.gov/topics/cyber-threats-and-advisories/incident-response", type: "Free" },
+    { url: "https://www.udemy.com/course/computer-forensics-investigations-and-incident-response/", type: "Paid" }
   ]
 },
 {
-  title: "Incident Response & Threat Hunting",
-  description: "Learn how to detect, respond to, and mitigate cybersecurity incidents.",
+  title: "Advanced Penetration Testing",
+  description: "Deep dive into advanced exploitation techniques and security testing.",
   category: "Cybersecurity",
   resources: [
-    { url: "https://www.sans.org/cyber-security-courses/incident-response/", type: "Free" },
-    { url: "https://www.udemy.com/course/incident-response-and-threat-hunting-course/", type: "Paid" }
+    { url: "https://www.offsec.com/courses/pen-200/", type: "Paid" },
+    { url: "https://www.sans.org/cyber-security-courses/advanced-penetration-testing-exploits-ethical-hacking/", type: "Paid" }
   ]
-},[
-  // ================= Cybersecurity =================
-  {
-    title: "Introduction to Cybersecurity",
-    description: "Understand the basics of cybersecurity, including threats, vulnerabilities, and defense strategies.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/intro-cybersecurity.html", type: "Free" },
-      { url: "https://www.udemy.com/course/the-complete-cyber-security-course-hackers-exposed/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Network Security Fundamentals",
-    description: "Learn how to protect networks from cyber threats using firewalls, VPNs, and intrusion detection systems.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://www.cybrary.it/course/network-security-fundamentals/", type: "Free" },
-      { url: "https://www.udemy.com/course/network-security-course/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Ethical Hacking",
-    description: "Learn penetration testing techniques to identify and fix vulnerabilities.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://www.hacker101.com/", type: "Free" },
-      { url: "https://www.udemy.com/course/learn-ethical-hacking-from-scratch/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Web Application Security",
-    description: "Understand common web vulnerabilities like SQL injection, XSS, and CSRF, and how to prevent them.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://owasp.org/www-project-top-ten/", type: "Free" },
-      { url: "https://www.udemy.com/course/web-application-security-testing/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Cloud Security",
-    description: "Learn to secure cloud environments like AWS, Azure, and Google Cloud.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://aws.amazon.com/security/", type: "Free" },
-      { url: "https://www.udemy.com/course/aws-certified-security-specialty/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Digital Forensics",
-    description: "Master techniques for investigating cybercrimes and collecting digital evidence.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://www.coursera.org/learn/digital-forensics", type: "Free" },
-      { url: "https://www.udemy.com/course/digital-forensics-masterclass/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Incident Response & Threat Hunting",
-    description: "Learn how to detect, respond to, and mitigate cybersecurity incidents.",
-    category: "Cybersecurity",
-    resources: [
-      { url: "https://www.sans.org/cyber-security-courses/incident-response/", type: "Free" },
-      { url: "https://www.udemy.com/course/incident-response-and-threat-hunting-course/", type: "Paid" }
-    ]
-  },
-
-  // ================= Cloud Computing =================
-  {
-    title: "Cloud Computing Basics",
-    description: "Understand the fundamentals of cloud services, deployment models, and architectures.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://aws.amazon.com/what-is-cloud-computing/", type: "Free" },
-      { url: "https://www.udemy.com/course/introduction-to-cloud-computing/", type: "Paid" }
-    ]
-  },
-  {
-    title: "AWS Fundamentals",
-    description: "Learn to use AWS cloud services including EC2, S3, and RDS.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://aws.amazon.com/training/", type: "Free" },
-      { url: "https://www.udemy.com/course/aws-certified-solutions-architect-associate/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Microsoft Azure Basics",
-    description: "Get started with Azure's cloud offerings, including virtual machines, storage, and databases.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://learn.microsoft.com/en-us/training/azure/", type: "Free" },
-      { url: "https://www.udemy.com/course/az-900-azure-fundamentals/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Google Cloud Platform Essentials",
-    description: "Learn GCP services for computing, storage, and AI applications.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://cloud.google.com/training", type: "Free" },
-      { url: "https://www.udemy.com/course/google-cloud-certification-training/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Cloud Security",
-    description: "Learn best practices for securing cloud applications and infrastructure.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://cloudsecurityalliance.org/", type: "Free" },
-      { url: "https://www.udemy.com/course/cloud-security-fundamentals/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Serverless Computing",
-    description: "Explore serverless architectures and platforms like AWS Lambda and Azure Functions.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview", type: "Free" },
-      { url: "https://www.udemy.com/course/aws-serverless-a-complete-introduction/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Cloud DevOps",
-    description: "Learn how DevOps practices are implemented in cloud environments.",
-    category: "Cloud Computing",
-    resources: [
-      { url: "https://cloud.google.com/devops", type: "Free" },
-      { url: "https://www.udemy.com/course/devops-on-aws/", type: "Paid" }
-    ]
-  }
-    
-],
-// Cloud Computing
-{
+},{
   title: "Introduction to Cloud Computing",
-  description: "Learn the basics of cloud computing, service models, and deployment methods.",
+  description: "Learn the basics of cloud computing, including types of cloud services and deployment models.",
   category: "Cloud Computing",
   resources: [
-    { url: "https://www.ibm.com/cloud/learn/cloud-computing", type: "Free" },
-    { url: "https://www.udemy.com/course/introduction-to-cloud-computing/", type: "Paid" }
+    { url: "https://www.ibm.com/topics/cloud-computing", type: "Free" },
+    { url: "https://www.udemy.com/course/introduction-to-cloud-computing-on-amazon-aws-for-beginners/", type: "Paid" }
   ]
 },
 {
-  title: "AWS Fundamentals",
-  description: "Understand Amazon Web Services core services and architecture.",
+  title: "AWS Certified Solutions Architect - Associate",
+  description: "Prepare for AWS certification and learn to design scalable systems.",
   category: "Cloud Computing",
   resources: [
-    { url: "https://aws.amazon.com/training/", type: "Free" },
+    { url: "https://aws.amazon.com/training/learn-about/cloud-practitioner/", type: "Free" },
     { url: "https://www.udemy.com/course/aws-certified-solutions-architect-associate/", type: "Paid" }
   ]
 },
 {
-  title: "Microsoft Azure Basics",
-  description: "Learn the essentials of Microsoft's cloud platform Azure.",
+  title: "Microsoft Azure Fundamentals",
+  description: "Understand Azure services, pricing, and deployment models.",
   category: "Cloud Computing",
   resources: [
-    { url: "https://learn.microsoft.com/en-us/training/azure/", type: "Free" },
+    { url: "https://learn.microsoft.com/en-us/training/paths/azure-fundamentals/", type: "Free" },
     { url: "https://www.udemy.com/course/azure-fundamentals/", type: "Paid" }
   ]
 },
 {
-  title: "Google Cloud Platform Essentials",
-  description: "Understand GCP's core services and cloud architecture.",
+  title: "Google Cloud Platform (GCP) Essentials",
+  description: "Learn GCP services and how to deploy applications in the cloud.",
   category: "Cloud Computing",
   resources: [
     { url: "https://cloud.google.com/training", type: "Free" },
-    { url: "https://www.udemy.com/course/google-cloud-platform-gcp-for-beginners/", type: "Paid" }
+    { url: "https://www.udemy.com/course/gcp-google-cloud-platform-certification-training/", type: "Paid" }
   ]
 },
 {
-  title: "Cloud Security",
-  description: "Learn security best practices for cloud environments.",
+  title: "Cloud Security Fundamentals",
+  description: "Understand cloud security risks and best practices to secure infrastructure.",
   category: "Cloud Computing",
   resources: [
-    { url: "https://aws.amazon.com/security/", type: "Free" },
-    { url: "https://www.udemy.com/course/aws-certified-security-specialty/", type: "Paid" }
+    { url: "https://cloudsecurityalliance.org/", type: "Free" },
+    { url: "https://www.udemy.com/course/cloud-security-fundamentals/", type: "Paid" }
+  ]
+},
+{
+  title: "DevOps on the Cloud",
+  description: "Integrate DevOps practices with AWS, Azure, and GCP.",
+  category: "Cloud Computing",
+  resources: [
+    { url: "https://aws.amazon.com/devops/", type: "Free" },
+    { url: "https://www.udemy.com/course/devops-cloud/", type: "Paid" }
   ]
 },
 {
   title: "Serverless Computing",
-  description: "Master serverless applications and architectures in AWS Lambda and more.",
+  description: "Learn serverless architecture using AWS Lambda, Azure Functions, and Google Cloud Functions.",
   category: "Cloud Computing",
   resources: [
-    { url: "https://www.serverless.com/learn", type: "Free" },
-    { url: "https://www.udemy.com/course/aws-lambda-serverless-architecture/", type: "Paid" }
+    { url: "https://aws.amazon.com/serverless/", type: "Free" },
+    { url: "https://www.udemy.com/course/serverless-framework/", type: "Paid" }
   ]
-},
-
-// DevOps
-{
+},{
   title: "Introduction to DevOps",
-  description: "Understand DevOps culture, tools, and practices.",
+  description: "Learn the fundamentals of DevOps culture, principles, and practices.",
   category: "DevOps",
   resources: [
-    { url: "https://azure.microsoft.com/en-us/overview/devops-tutorial/", type: "Free" },
-    { url: "https://www.udemy.com/course/the-complete-devops-engineer-course-2-0/", type: "Paid" }
+    { url: "https://aws.amazon.com/devops/what-is-devops/", type: "Free" },
+    { url: "https://www.udemy.com/course/devops-foundations/", type: "Paid" }
   ]
 },
 {
-  title: "CI/CD Pipelines",
-  description: "Learn continuous integration and deployment with popular tools.",
+  title: "CI/CD with Jenkins",
+  description: "Master Continuous Integration and Continuous Delivery using Jenkins.",
   category: "DevOps",
   resources: [
-    { url: "https://docs.github.com/en/actions", type: "Free" },
-    { url: "https://www.udemy.com/course/ci-cd-pipeline-jenkins/", type: "Paid" }
+    { url: "https://www.jenkins.io/doc/tutorials/", type: "Free" },
+    { url: "https://www.udemy.com/course/jenkins-from-zero-to-hero/", type: "Paid" }
   ]
 },
 {
-  title: "Docker Essentials",
-  description: "Understand containerization and Docker fundamentals.",
+  title: "Docker for DevOps Engineers",
+  description: "Learn Docker containers and how to integrate them into DevOps pipelines.",
   category: "DevOps",
   resources: [
-    { url: "https://docker-curriculum.com/", type: "Free" },
+    { url: "https://docs.docker.com/get-started/", type: "Free" },
     { url: "https://www.udemy.com/course/docker-mastery/", type: "Paid" }
   ]
 },
 {
-  title: "Kubernetes Basics",
-  description: "Learn how to orchestrate containers using Kubernetes.",
+  title: "Kubernetes for Beginners",
+  description: "Learn Kubernetes fundamentals for container orchestration.",
   category: "DevOps",
   resources: [
-    { url: "https://kubernetes.io/docs/tutorials/kubernetes-basics/", type: "Free" },
-    { url: "https://www.udemy.com/course/learn-kubernetes/", type: "Paid" }
+    { url: "https://kubernetes.io/docs/tutorials/", type: "Free" },
+    { url: "https://www.udemy.com/course/kubernetes-for-beginners/", type: "Paid" }
   ]
 },
 {
-  title: "Infrastructure as Code",
-  description: "Automate infrastructure management with tools like Terraform.",
+  title: "Infrastructure as Code with Terraform",
+  description: "Manage cloud infrastructure using Terraform and IaC principles.",
   category: "DevOps",
   resources: [
     { url: "https://developer.hashicorp.com/terraform/tutorials", type: "Free" },
@@ -729,345 +792,396 @@ const courses = [
   ]
 },
 {
-  title: "Monitoring & Logging",
-  description: "Implement system monitoring and logging with tools like Prometheus and ELK Stack.",
+  title: "Monitoring and Logging with Prometheus & Grafana",
+  description: "Set up monitoring and visualization for DevOps systems.",
   category: "DevOps",
   resources: [
     { url: "https://prometheus.io/docs/introduction/overview/", type: "Free" },
-    { url: "https://www.udemy.com/course/monitoring-systems-with-prometheus-and-grafana/", type: "Paid" }
-  ]
-},
-  {
-    title: "Blockchain Basics",
-    description: "Understand blockchain technology, its components, and applications in various industries.",
-    category: "Blockchain Development",
-    resources: [
-      { url: "https://www.ibm.com/topics/what-is-blockchain", type: "Free" },
-      { url: "https://www.coursera.org/learn/blockchain-basics", type: "Free" }
-    ]
-  },
-  {
-    title: "Ethereum and Smart Contracts",
-    description: "Learn to build decentralized applications (dApps) using Ethereum and smart contracts.",
-    category: "Blockchain Development",
-    resources: [
-      { url: "https://ethereum.org/en/developers/docs/", type: "Free" },
-      { url: "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Solidity Programming",
-    description: "Master Solidity for writing secure and efficient smart contracts.",
-    category: "Blockchain Development",
-    resources: [
-      { url: "https://docs.soliditylang.org/en/v0.8.20/", type: "Free" },
-      { url: "https://cryptozombies.io/", type: "Free" }
-    ]
-  },
-  {
-    title: "Hyperledger Fabric",
-    description: "Learn enterprise blockchain development with Hyperledger Fabric.",
-    category: "Blockchain Development",
-    resources: [
-      { url: "https://www.hyperledger.org/use/fabric", type: "Free" },
-      { url: "https://www.udemy.com/course/hyperledger-fabric-and-composer/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Blockchain Security",
-    description: "Learn how to secure blockchain applications and smart contracts.",
-    category: "Blockchain Development",
-    resources: [
-      { url: "https://consensys.net/blog/developers/solidity-security-best-practices/", type: "Free" },
-      { url: "https://www.udemy.com/course/blockchain-and-bitcoin-fundamentals/", type: "Paid" }
-    ]
-  },
-  {
-    title: "DeFi Development",
-    description: "Understand and build decentralized finance (DeFi) applications.",
-    category: "Blockchain Development",
-    resources: [
-      { url: "https://ethereum.org/en/defi/", type: "Free" },
-      { url: "https://www.udemy.com/course/defi-decentralized-finance-course-2021/", type: "Paid" }
-    ]
-  },
-
-  // Game Development
-  {
-    title: "Introduction to Game Development",
-    description: "Learn the fundamentals of designing and creating games.",
-    category: "Game Development",
-    resources: [
-      { url: "https://learn.unity.com/", type: "Free" },
-      { url: "https://www.udemy.com/course/unitycourse/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Unity 3D Game Development",
-    description: "Create 2D and 3D games using the Unity engine.",
-    category: "Game Development",
-    resources: [
-      { url: "https://learn.unity.com/pathway/junior-programmer", type: "Free" },
-      { url: "https://www.udemy.com/course/complete-unity-developer-2d/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Unreal Engine Development",
-    description: "Build high-quality games using Unreal Engine and C++.",
-    category: "Game Development",
-    resources: [
-      { url: "https://docs.unrealengine.com/", type: "Free" },
-      { url: "https://www.udemy.com/course/unrealcourse/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Game Design Principles",
-    description: "Learn core game design principles, storytelling, and mechanics.",
-    category: "Game Development",
-    resources: [
-      { url: "https://www.gamedesigning.org/learn/", type: "Free" },
-      { url: "https://www.coursera.org/specializations/game-design", type: "Mixed" }
-    ]
-  },
-  {
-    title: "2D Pixel Art for Games",
-    description: "Create pixel art assets for 2D games.",
-    category: "Game Development",
-    resources: [
-      { url: "https://www.youtube.com/playlist?list=PLv8DnRaQOs5-ST_VDqgbbMRtzZK2sY6jE", type: "Free" },
-      { url: "https://www.udemy.com/course/pixel-art-for-video-games/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Multiplayer Game Development",
-    description: "Learn how to develop multiplayer games and networking concepts.",
-    category: "Game Development",
-    resources: [
-      { url: "https://www.youtube.com/watch?v=hxMW1t9GQh8", type: "Free" },
-      { url: "https://www.udemy.com/course/unity-multiplayer/", type: "Paid" }
-    ]
-  },
-
-  // AR/VR Development
-  {
-    title: "Introduction to AR/VR",
-    description: "Understand augmented and virtual reality concepts and tools.",
-    category: "AR/VR Development",
-    resources: [
-      { url: "https://developer.oculus.com/learn/", type: "Free" },
-      { url: "https://www.udemy.com/course/augmented-reality-development-course/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Unity AR Foundation",
-    description: "Build AR applications using Unity's AR Foundation.",
-    category: "AR/VR Development",
-    resources: [
-      { url: "https://learn.unity.com/", type: "Free" },
-      { url: "https://www.udemy.com/course/augmented-reality-with-unity-ar-foundation/", type: "Paid" }
-    ]
-  },
-  {
-    title: "VR Development with Unreal Engine",
-    description: "Create immersive VR experiences with Unreal Engine.",
-    category: "AR/VR Development",
-    resources: [
-      { url: "https://docs.unrealengine.com/5.0/en-US/working-with-vr-in-unreal-engine/", type: "Free" },
-      { url: "https://www.udemy.com/course/unreal-vr-development/", type: "Paid" }
-    ]
-  },
-  {
-    title: "ARKit and ARCore",
-    description: "Develop AR applications for iOS and Android using ARKit and ARCore.",
-    category: "AR/VR Development",
-    resources: [
-      { url: "https://developers.google.com/ar", type: "Free" },
-      { url: "https://www.udemy.com/course/arkit-arkit2-and-arcore-arcore2-mobile-augmented-reality/", type: "Paid" }
-    ]
-  },
-  {
-    title: "360 Video Production",
-    description: "Learn to create 360-degree video content for VR headsets.",
-    category: "AR/VR Development",
-    resources: [
-      { url: "https://creatoracademy.youtube.com/page/lesson/360-video-vr", type: "Free" },
-      { url: "https://www.udemy.com/course/360-vr-video-production-and-editing-masterclass/", type: "Paid" }
-    ]
-  },
-  {
-    title: "Mixed Reality Development",
-    description: "Explore mixed reality technologies and create interactive experiences.",
-    category: "AR/VR Development",
-    resources: [
-      { url: "https://docs.microsoft.com/en-us/windows/mixed-reality/", type: "Free" },
-      { url: "https://www.udemy.com/course/mixed-reality-development-course/", type: "Paid" }
-    ]
-  },{
-  title: "UI/UX Design Fundamentals",
-  description: "Learn the principles of user interface and user experience design for web and mobile applications.",
-  category: "UI/UX Design",
-  resources: [
-    { url: "https://www.interaction-design.org/courses/ui-design-patterns-for-successful-software", type: "Paid" },
-    { url: "https://www.coursera.org/learn/ui-ux-design", type: "Paid" }
+    { url: "https://www.udemy.com/course/prometheus-grafana/", type: "Paid" }
   ]
 },
 {
-  title: "Figma for Beginners",
-  description: "Get started with Figma to create responsive and interactive UI designs.",
-  category: "UI/UX Design",
+  title: "GitOps with ArgoCD",
+  description: "Implement GitOps principles using ArgoCD for Kubernetes deployments.",
+  category: "DevOps",
   resources: [
-    { url: "https://help.figma.com/hc/en-us/articles/360040528034-Get-started-in-Figma", type: "Free" },
-    { url: "https://www.udemy.com/course/learn-figma/", type: "Paid" }
+    { url: "https://argo-cd.readthedocs.io/en/stable/", type: "Free" },
+    { url: "https://www.udemy.com/course/gitops-with-argocd/", type: "Paid" }
+  ]
+},{
+  title: "Blockchain Basics",
+  description: "Understand the core concepts and architecture of blockchain technology.",
+  category: "Blockchain Development",
+  resources: [
+    { url: "https://www.ibm.com/topics/what-is-blockchain", type: "Free" },
+    { url: "https://www.udemy.com/course/blockchain-and-cryptocurrency-explained/", type: "Paid" }
   ]
 },
 {
-  title: "Design Thinking",
-  description: "Master design thinking methodologies to create user-centered products.",
-  category: "UI/UX Design",
+  title: "Ethereum Smart Contracts with Solidity",
+  description: "Learn to develop decentralized applications (dApps) using Solidity.",
+  category: "Blockchain Development",
   resources: [
-    { url: "https://www.coursera.org/learn/design-thinking", type: "Paid" },
-    { url: "https://www.ideou.com/pages/design-thinking", type: "Paid" }
+    { url: "https://docs.soliditylang.org/en/v0.8.21/", type: "Free" },
+    { url: "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/", type: "Paid" }
   ]
 },
 {
-  title: "Prototyping and Wireframing",
-  description: "Learn how to create prototypes and wireframes to visualize user flows.",
-  category: "UI/UX Design",
+  title: "Hyperledger Fabric Fundamentals",
+  description: "Get started with permissioned blockchain using Hyperledger Fabric.",
+  category: "Blockchain Development",
   resources: [
-    { url: "https://www.nngroup.com/articles/ux-prototype-hi-lo-fidelity/", type: "Free" },
-    { url: "https://www.udemy.com/course/prototyping-for-beginners/", type: "Paid" }
+    { url: "https://hyperledger-fabric.readthedocs.io/en/latest/", type: "Free" },
+    { url: "https://www.udemy.com/course/hyperledger-fabric-blockchain/", type: "Paid" }
   ]
 },
 {
-  title: "Accessibility in Design",
-  description: "Ensure your designs are accessible to all users by following accessibility guidelines.",
+  title: "Decentralized Finance (DeFi) Development",
+  description: "Explore DeFi protocols and build your own decentralized financial applications.",
+  category: "Blockchain Development",
+  resources: [
+    { url: "https://ethereum.org/en/defi/", type: "Free" },
+    { url: "https://www.udemy.com/course/decentralized-finance-defi-course-2021/", type: "Paid" }
+  ]
+},
+{
+  title: "NFT Development on Ethereum",
+  description: "Create and deploy your own Non-Fungible Tokens (NFTs) using ERC-721.",
+  category: "Blockchain Development",
+  resources: [
+    { url: "https://ethereum.org/en/developers/tutorials/how-to-write-and-deploy-an-nft/", type: "Free" },
+    { url: "https://www.udemy.com/course/nft-development-course/", type: "Paid" }
+  ]
+},
+{
+  title: "Blockchain Security Best Practices",
+  description: "Learn how to secure blockchain applications and smart contracts.",
+  category: "Blockchain Development",
+  resources: [
+    { url: "https://consensys.github.io/smart-contract-best-practices/", type: "Free" },
+    { url: "https://www.udemy.com/course/blockchain-security-course/", type: "Paid" }
+  ]
+},
+{
+  title: "Web3.js for Blockchain Developers",
+  description: "Interact with Ethereum blockchain using Web3.js library.",
+  category: "Blockchain Development",
+  resources: [
+    { url: "https://web3js.readthedocs.io/en/v1.10.0/", type: "Free" },
+    { url: "https://www.udemy.com/course/complete-dapp-solidity-react-blockchain-development/", type: "Paid" }
+  ]
+},{
+  title: "Game Development Fundamentals",
+  description: "Learn the basics of game design and development principles.",
+  category: "Game Development",
+  resources: [
+    { url: "https://learn.unity.com/", type: "Free" },
+    { url: "https://www.udemy.com/course/unitycourse/", type: "Paid" }
+  ]
+},
+{
+  title: "Unity Game Development",
+  description: "Build 2D and 3D games using the Unity engine.",
+  category: "Game Development",
+  resources: [
+    { url: "https://learn.unity.com/tutorials", type: "Free" },
+    { url: "https://www.udemy.com/course/unitycourse/", type: "Paid" }
+  ]
+},
+{
+  title: "Unreal Engine for Beginners",
+  description: "Create high-quality games with Unreal Engine.",
+  category: "Game Development",
+  resources: [
+    { url: "https://www.unrealengine.com/en-US/onlinelearning-courses", type: "Free" },
+    { url: "https://www.udemy.com/course/unrealcourse/", type: "Paid" }
+  ]
+},
+{
+  title: "C# Programming for Games",
+  description: "Learn C# programming for game development in Unity.",
+  category: "Game Development",
+  resources: [
+    { url: "https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/", type: "Free" },
+    { url: "https://www.udemy.com/course/csharp-tutorial-for-beginners/", type: "Paid" }
+  ]
+},
+{
+  title: "2D Game Development",
+  description: "Master the art of creating 2D games using various tools.",
+  category: "Game Development",
+  resources: [
+    { url: "https://learn.unity.com/tutorials/2d-game-kit", type: "Free" },
+    { url: "https://www.udemy.com/course/2d-game-development-course/", type: "Paid" }
+  ]
+},
+{
+  title: "3D Game Development",
+  description: "Build immersive 3D games with advanced graphics and physics.",
+  category: "Game Development",
+  resources: [
+    { url: "https://learn.unity.com/tutorials/3d-game-kit", type: "Free" },
+    { url: "https://www.udemy.com/course/3d-game-development-course/", type: "Paid" }
+  ]
+},
+{
+  title: "Game AI Programming",
+  description: "Implement artificial intelligence for non-player characters (NPCs).",
+  category: "Game Development",
+  resources: [
+    { url: "https://www.gamedev.net/tutorials/programming/artificial-intelligence/", type: "Free" },
+    { url: "https://www.udemy.com/course/game-ai-development/", type: "Paid" }
+  ]
+},{
+  title: "Introduction to AR & VR",
+  description: "Learn the basics of augmented and virtual reality technologies.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://www.coursera.org/learn/introduction-augmented-reality-virtual-reality", type: "Free" },
+    { url: "https://www.udemy.com/course/augmented-reality-and-virtual-reality/", type: "Paid" }
+  ]
+},
+{
+  title: "Unity for AR & VR",
+  description: "Build immersive AR and VR experiences using Unity engine.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://learn.unity.com/tutorials/ar-vr", type: "Free" },
+    { url: "https://www.udemy.com/course/unity-ar-vr-development/", type: "Paid" }
+  ]
+},
+{
+  title: "Unreal Engine for AR & VR",
+  description: "Create high-quality AR/VR applications with Unreal Engine.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://www.unrealengine.com/en-US/onlinelearning-courses", type: "Free" },
+    { url: "https://www.udemy.com/course/unreal-engine-ar-vr/", type: "Paid" }
+  ]
+},
+{
+  title: "3D Modeling for AR/VR",
+  description: "Learn 3D modeling techniques for creating assets in AR and VR.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://www.blender.org/support/tutorials/", type: "Free" },
+    { url: "https://www.udemy.com/course/3d-modeling-for-beginners/", type: "Paid" }
+  ]
+},
+{
+  title: "XR Interaction Toolkit",
+  description: "Use Unity’s XR Interaction Toolkit to build interactive AR/VR apps.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://learn.unity.com/tutorial/xr-interaction-toolkit", type: "Free" }
+  ]
+},
+{
+  title: "ARKit and ARCore Development",
+  description: "Develop native AR apps using Apple ARKit and Google ARCore.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://developer.apple.com/augmented-reality/", type: "Free" },
+    { url: "https://developers.google.com/ar", type: "Free" }
+  ]
+},
+{
+  title: "VR Game Development",
+  description: "Build engaging VR games with immersive environments.",
+  category: "AR/VR Development",
+  resources: [
+    { url: "https://learn.unity.com/tutorials/vr-game-development", type: "Free" },
+    { url: "https://www.udemy.com/course/vr-game-development/", type: "Paid" }
+  ]
+},{
+  title: "Introduction to UI/UX Design",
+  description: "Learn the basics of user interface and user experience design principles.",
+  category: "UI/UX Design",
+  resources: [
+    { url: "https://www.coursera.org/learn/ui-ux-design", type: "Free" },
+    { url: "https://www.udemy.com/course/ui-ux-web-design-using-adobe-xd/", type: "Paid" }
+  ]
+},
+{
+  title: "User Research and Usability Testing",
+  description: "Understand user needs and evaluate design effectiveness through testing.",
+  category: "UI/UX Design",
+  resources: [
+    { url: "https://www.nngroup.com/articles/usability-testing-101/", type: "Free" },
+    { url: "https://www.udemy.com/course/user-research/", type: "Paid" }
+  ]
+},
+{
+  title: "Wireframing and Prototyping",
+  description: "Create wireframes and prototypes using popular tools like Figma and Sketch.",
+  category: "UI/UX Design",
+  resources: [
+    { url: "https://www.figma.com/resources/learn-design/", type: "Free" },
+    { url: "https://www.udemy.com/course/figma-ui-ux-design-course/", type: "Paid" }
+  ]
+},
+{
+  title: "Visual Design Fundamentals",
+  description: "Learn about typography, color theory, and visual hierarchy.",
+  category: "UI/UX Design",
+  resources: [
+    { url: "https://www.interaction-design.org/courses/visual-design", type: "Free" },
+    { url: "https://www.udemy.com/course/visual-design-fundamentals/", type: "Paid" }
+  ]
+},
+{
+  title: "Design Systems and Style Guides",
+  description: "Create consistent and scalable design systems.",
+  category: "UI/UX Design",
+  resources: [
+    { url: "https://www.invisionapp.com/inside-design/design-systems-guide/", type: "Free" },
+    { url: "https://www.udemy.com/course/design-systems/", type: "Paid" }
+  ]
+},
+{
+  title: "Accessibility in UI/UX",
+  description: "Design inclusive products accessible to all users.",
   category: "UI/UX Design",
   resources: [
     { url: "https://www.w3.org/WAI/fundamentals/accessibility-intro/", type: "Free" },
-    { url: "https://www.udemy.com/course/web-accessibility/", type: "Paid" }
+    { url: "https://www.udemy.com/course/web-accessibility-for-beginners/", type: "Paid" }
   ]
 },
 {
-  title: "Advanced UI Animation",
-  description: "Create engaging and interactive animations in your UI designs.",
+  title: "Mobile App Design",
+  description: "Design user-friendly mobile interfaces for iOS and Android.",
   category: "UI/UX Design",
   resources: [
-    { url: "https://www.smashingmagazine.com/2018/01/animation-user-experience/", type: "Free" },
-    { url: "https://motiondesign.school/products/ui-animations", type: "Paid" }
+    { url: "https://material.io/design", type: "Free" },
+    { url: "https://www.udemy.com/course/mobile-ui-ux-design/", type: "Paid" }
   ]
-},
-
-{
+},{
   title: "Database Fundamentals",
-  description: "Learn database basics including relational models, SQL, and ER diagrams.",
+  description: "Learn the basics of database systems, architecture, and models.",
   category: "Database Administration",
   resources: [
     { url: "https://www.khanacademy.org/computing/computer-programming/sql", type: "Free" },
-    { url: "https://www.udemy.com/course/sql-database-for-beginners/", type: "Paid" }
+    { url: "https://www.udemy.com/course/database-administration-fundamentals/", type: "Paid" }
+  ]
+},
+{
+  title: "SQL for Database Administration",
+  description: "Master SQL queries and database management.",
+  category: "Database Administration",
+  resources: [
+    { url: "https://mode.com/sql-tutorial/", type: "Free" },
+    { url: "https://www.udemy.com/course/sql-for-beginners/", type: "Paid" }
   ]
 },
 {
   title: "MySQL Administration",
-  description: "Master the core skills for managing and maintaining MySQL databases.",
+  description: "Manage and optimize MySQL databases.",
   category: "Database Administration",
   resources: [
     { url: "https://dev.mysql.com/doc/", type: "Free" },
-    { url: "https://www.udemy.com/course/mysql-database-administration-for-beginners/", type: "Paid" }
+    { url: "https://www.udemy.com/course/mysql-database-administration/", type: "Paid" }
   ]
 },
 {
-  title: "PostgreSQL for Developers",
-  description: "Learn PostgreSQL database creation, queries, and optimization techniques.",
+  title: "PostgreSQL for DBAs",
+  description: "Learn to administer and optimize PostgreSQL databases.",
   category: "Database Administration",
   resources: [
     { url: "https://www.postgresql.org/docs/", type: "Free" },
-    { url: "https://www.udemy.com/course/postgresql-for-everybody/", type: "Paid" }
-  ]
-},
-{
-  title: "Database Security",
-  description: "Understand database security concepts and learn how to secure your data.",
-  category: "Database Administration",
-  resources: [
-    { url: "https://www.ibm.com/topics/database-security", type: "Free" },
-    { url: "https://www.pluralsight.com/courses/database-security", type: "Paid" }
+    { url: "https://www.udemy.com/course/postgresql-for-beginners/", type: "Paid" }
   ]
 },
 {
   title: "Oracle Database Administration",
-  description: "Get hands-on experience with Oracle database management and optimization.",
+  description: "Manage Oracle database systems and perform advanced DBA tasks.",
   category: "Database Administration",
   resources: [
     { url: "https://docs.oracle.com/en/database/", type: "Free" },
-    { url: "https://www.udemy.com/course/oracle-database-administration-for-beginners/", type: "Paid" }
+    { url: "https://www.udemy.com/course/oracle-database-administration/", type: "Paid" }
   ]
 },
 {
-  title: "Backup and Recovery Strategies",
-  description: "Learn how to implement robust database backup and recovery plans.",
+  title: "Database Security Best Practices",
+  description: "Protect databases from vulnerabilities and attacks.",
   category: "Database Administration",
   resources: [
-    { url: "https://www.sqlshack.com/sql-server-backup-and-restore/", type: "Free" },
-    { url: "https://www.udemy.com/course/sql-server-high-availability-disaster-recovery-hadr/", type: "Paid" }
+    { url: "https://www.sans.org/cyber-security-courses/database-security/", type: "Free" },
+    { url: "https://www.udemy.com/course/database-security/", type: "Paid" }
   ]
 },
-
 {
+  title: "Backup and Recovery",
+  description: "Learn strategies for data backup, recovery, and disaster management.",
+  category: "Database Administration",
+  resources: [
+    { url: "https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/", type: "Free" },
+    { url: "https://www.udemy.com/course/database-backup-and-recovery/", type: "Paid" }
+  ]
+},{
   title: "Software Testing Fundamentals",
-  description: "Learn the basics of software testing including unit, integration, and system testing.",
+  description: "Learn basic concepts and types of software testing.",
   category: "Software Testing / QA",
   resources: [
     { url: "https://www.guru99.com/software-testing.html", type: "Free" },
-    { url: "https://www.udemy.com/course/software-testing-and-automation/", type: "Paid" }
+    { url: "https://www.udemy.com/course/software-testing/", type: "Paid" }
   ]
 },
 {
-  title: "Manual Testing for Beginners",
-  description: "Master manual testing processes, test case creation, and bug reporting.",
+  title: "Manual Testing Basics",
+  description: "Understand manual testing techniques and test case writing.",
   category: "Software Testing / QA",
   resources: [
     { url: "https://www.softwaretestinghelp.com/manual-testing-tutorial-1/", type: "Free" },
-    { url: "https://www.udemy.com/course/manual-software-testing-course/", type: "Paid" }
+    { url: "https://www.udemy.com/course/manual-testing/", type: "Paid" }
   ]
 },
 {
-  title: "Automation Testing with Selenium",
-  description: "Learn Selenium WebDriver for browser automation testing.",
+  title: "Selenium WebDriver Automation",
+  description: "Automate web testing using Selenium WebDriver.",
   category: "Software Testing / QA",
   resources: [
-    { url: "https://www.selenium.dev/documentation/", type: "Free" },
-    { url: "https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/", type: "Paid" }
+    { url: "https://www.selenium.dev/documentation/en/webdriver/", type: "Free" },
+    { url: "https://www.udemy.com/course/selenium-webdriver-with-java-basics-to-advanced/", type: "Paid" }
   ]
 },
 {
   title: "API Testing with Postman",
-  description: "Master API testing concepts and Postman workflows.",
+  description: "Learn to test APIs using Postman and Newman.",
   category: "Software Testing / QA",
   resources: [
-    { url: "https://learning.postman.com/docs/introduction/overview/", type: "Free" },
+    { url: "https://learning.postman.com/docs/getting-started/introduction/", type: "Free" },
     { url: "https://www.udemy.com/course/postman-the-complete-guide/", type: "Paid" }
   ]
 },
 {
   title: "Performance Testing with JMeter",
-  description: "Learn how to test application performance and scalability using JMeter.",
+  description: "Test application performance and load using Apache JMeter.",
   category: "Software Testing / QA",
   resources: [
-    { url: "https://jmeter.apache.org/usermanual/index.html", type: "Free" },
-    { url: "https://www.udemy.com/course/apache-jmeter/", type: "Paid" }
+    { url: "https://jmeter.apache.org/usermanual/get-started.html", type: "Free" },
+    { url: "https://www.udemy.com/course/apache-jmeter-performance-testing/", type: "Paid" }
   ]
 },
 {
   title: "Test Automation Frameworks",
-  description: "Design and implement test automation frameworks for software testing projects.",
+  description: "Build scalable and maintainable test automation frameworks.",
   category: "Software Testing / QA",
   resources: [
-    { url: "https://www.guru99.com/introduction-to-automation-frameworks.html", type: "Free" },
-    { url: "https://www.udemy.com/course/framework-development-with-selenium-webdriver/", type: "Paid" }
+    { url: "https://www.guru99.com/test-automation-framework.html", type: "Free" },
+    { url: "https://www.udemy.com/course/test-automation-frameworks/", type: "Paid" }
+  ]
+},
+{
+  title: "Agile Testing & Scrum",
+  description: "Learn agile testing methodologies and Scrum practices.",
+  category: "Software Testing / QA",
+  resources: [
+    { url: "https://www.scrum.org/resources/what-is-agile-testing", type: "Free" },
+    { url: "https://www.udemy.com/course/agile-testing-scrum/", type: "Paid" }
   ]
 },{
   title: "Python for Beginners",
-  description: "Learn the basics of Python programming including syntax, variables, and loops.",
+  description: "Learn Python programming basics and syntax.",
   category: "Python Developer",
   resources: [
     { url: "https://www.learnpython.org/", type: "Free" },
@@ -1075,44 +1189,36 @@ const courses = [
   ]
 },
 {
-  title: "Object-Oriented Programming in Python",
-  description: "Understand classes, objects, and OOP concepts in Python.",
+  title: "Python Data Structures",
+  description: "Master lists, dictionaries, sets, and tuples in Python.",
   category: "Python Developer",
   resources: [
-    { url: "https://realpython.com/python3-object-oriented-programming/", type: "Free" },
-    { url: "https://www.udemy.com/course/python-oops/", type: "Paid" }
+    { url: "https://docs.python.org/3/tutorial/datastructures.html", type: "Free" },
+    { url: "https://www.udemy.com/course/python-data-structures/", type: "Paid" }
   ]
 },
 {
-  title: "Python for Data Science",
-  description: "Learn Python libraries like Pandas, NumPy, and Matplotlib for data analysis.",
+  title: "Web Development with Django",
+  description: "Build web applications using the Django framework.",
   category: "Python Developer",
   resources: [
-    { url: "https://www.kaggle.com/learn/python", type: "Free" },
-    { url: "https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on/", type: "Paid" }
-  ]
-},
-{
-  title: "Flask Web Development",
-  description: "Build lightweight web applications using the Flask framework.",
-  category: "Python Developer",
-  resources: [
-    { url: "https://flask.palletsprojects.com/en/3.0.x/tutorial/", type: "Free" },
-    { url: "https://www.udemy.com/course/rest-api-flask-and-python/", type: "Paid" }
-  ]
-},
-{
-  title: "Django Web Development",
-  description: "Learn to build full-stack web applications using Django.",
-  category: "Python Developer",
-  resources: [
-    { url: "https://docs.djangoproject.com/en/5.0/intro/tutorial01/", type: "Free" },
+    { url: "https://docs.djangoproject.com/en/stable/intro/tutorial01/", type: "Free" },
     { url: "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/", type: "Paid" }
   ]
 },
 {
-  title: "Automation with Python",
-  description: "Automate repetitive tasks with Python scripts and libraries.",
+  title: "Flask Web Development",
+  description: "Learn to build lightweight web apps with Flask.",
+  category: "Python Developer",
+  resources: [
+    { url: "https://flask.palletsprojects.com/en/2.2.x/tutorial/", type: "Free" },
+    { url: "https://www.udemy.com/course/python-and-flask-bootcamp-create-websites-using-flask/", type: "Paid" }
+  ]
+},
+// Removed duplicate 'Python for Data Science' from Python Developer
+{
+  title: "Automating Tasks with Python",
+  description: "Write Python scripts to automate everyday tasks.",
   category: "Python Developer",
   resources: [
     { url: "https://automatetheboringstuff.com/", type: "Free" },
@@ -1120,16 +1226,16 @@ const courses = [
   ]
 },
 {
-  title: "Testing in Python",
-  description: "Learn how to test Python applications with unittest and pytest.",
+  title: "Python Object-Oriented Programming",
+  description: "Understand OOP concepts and apply them in Python.",
   category: "Python Developer",
   resources: [
-    { url: "https://realpython.com/python-testing/", type: "Free" },
-    { url: "https://www.udemy.com/course/automated-software-testing-with-python/", type: "Paid" }
+    { url: "https://realpython.com/python3-object-oriented-programming/", type: "Free" },
+    { url: "https://www.udemy.com/course/python-object-oriented-programming/", type: "Paid" }
   ]
 },{
-  title: "C++ for Beginners",
-  description: "Learn the basics of C++ including syntax, variables, and control structures.",
+  title: "C++ Fundamentals",
+  description: "Learn the basics of C++ programming language and syntax.",
   category: "C++ Developer",
   resources: [
     { url: "https://www.learncpp.com/", type: "Free" },
@@ -1138,96 +1244,77 @@ const courses = [
 },
 {
   title: "Object-Oriented Programming in C++",
-  description: "Master OOP concepts like classes, inheritance, and polymorphism in C++.",
+  description: "Master classes, objects, inheritance, and polymorphism in C++.",
   category: "C++ Developer",
   resources: [
-    { url: "https://www.programiz.com/cpp-programming/object-class", type: "Free" },
-    { url: "https://www.udemy.com/course/oop-in-c-plus-plus/", type: "Paid" }
+    { url: "https://www.cplusplus.com/doc/tutorial/classes/", type: "Free" },
+    { url: "https://www.udemy.com/course/cplusplus-oop/", type: "Paid" }
   ]
 },
 {
   title: "Data Structures and Algorithms in C++",
-  description: "Implement and understand DSA concepts using C++.",
+  description: "Implement common data structures and algorithms using C++.",
   category: "C++ Developer",
   resources: [
     { url: "https://www.geeksforgeeks.org/data-structures/", type: "Free" },
-    { url: "https://www.udemy.com/course/dsa-c-plus-plus/", type: "Paid" }
-  ]
-},
-{
-  title: "C++ Standard Template Library (STL)",
-  description: "Learn how to use the STL for efficient coding in C++.",
-  category: "C++ Developer",
-  resources: [
-    { url: "https://cplusplus.com/reference/stl/", type: "Free" },
-    { url: "https://www.udemy.com/course/cpp-stl/", type: "Paid" }
+    { url: "https://www.udemy.com/course/dsa-in-cplusplus/", type: "Paid" }
   ]
 },
 {
   title: "Advanced C++ Programming",
-  description: "Explore advanced features like templates, exceptions, and smart pointers.",
+  description: "Learn about templates, STL, exceptions, and advanced topics.",
   category: "C++ Developer",
   resources: [
-    { url: "https://www.cplusplus.com/doc/tutorial/templates/", type: "Free" },
-    { url: "https://www.udemy.com/course/advanced-c-programming/", type: "Paid" }
+    { url: "https://isocpp.org/wiki/faq", type: "Free" },
+    { url: "https://www.udemy.com/course/advanced-cplusplus/", type: "Paid" }
   ]
 },
 {
-  title: "Game Development with C++",
-  description: "Learn how to build games using C++ and libraries like SDL or Unreal Engine.",
+  title: "C++ for Game Development",
+  description: "Use C++ to build games and understand game engine architecture.",
   category: "C++ Developer",
   resources: [
-    { url: "https://lazyfoo.net/tutorials/SDL/", type: "Free" },
-    { url: "https://www.udemy.com/course/unrealcourse/", type: "Paid" }
+    { url: "https://www.udemy.com/course/cplusplus-for-game-development/", type: "Paid" }
   ]
 },
 {
-  title: "C++ Multithreading and Concurrency",
-  description: "Understand how to write concurrent programs in C++.",
+  title: "Memory Management in C++",
+  description: "Understand pointers, dynamic allocation, and memory handling.",
   category: "C++ Developer",
   resources: [
-    { url: "https://www.modernescpp.com/index.php/multithreading", type: "Free" },
-    { url: "https://www.udemy.com/course/multithreading-cplusplus/", type: "Paid" }
+    { url: "https://www.cplusplus.com/doc/tutorial/pointers/", type: "Free" },
+    { url: "https://www.udemy.com/course/cplusplus-memory-management/", type: "Paid" }
+  ]
+},
+{
+  title: "Multithreading in C++",
+  description: "Learn concurrent programming and multithreading concepts.",
+  category: "C++ Developer",
+  resources: [
+    { url: "https://www.cplusplus.com/reference/thread/thread/", type: "Free" },
+    { url: "https://www.udemy.com/course/multithreading-in-cplusplus/", type: "Paid" }
   ]
 },{
-  title: "Introduction to Data Engineering",
-  description: "Understand the fundamentals of data engineering, pipelines, and ETL processes.",
+  title: "Data Engineering Fundamentals",
+  description: "Learn core concepts of data engineering, pipelines, and ETL processes.",
   category: "Data Engineer",
   resources: [
-    { url: "https://www.coursera.org/learn/data-engineering", type: "Free" },
-    { url: "https://www.udemy.com/course/the-data-engineering-course/", type: "Paid" }
+    { url: "https://www.coursera.org/learn/data-engineering-foundations", type: "Free" },
+    { url: "https://www.udemy.com/course/data-engineering/", type: "Paid" }
   ]
 },
 {
-  title: "SQL for Data Engineering",
-  description: "Master SQL to query, manage, and manipulate large datasets effectively.",
+  title: "Big Data and Hadoop",
+  description: "Understand big data ecosystem and work with Hadoop framework.",
   category: "Data Engineer",
   resources: [
-    { url: "https://mode.com/sql-tutorial/", type: "Free" },
-    { url: "https://www.udemy.com/course/the-complete-sql-bootcamp/", type: "Paid" }
+    { url: "https://hadoop.apache.org/docs/", type: "Free" },
+    { url: "https://www.udemy.com/course/hadoop-for-beginners/", type: "Paid" }
   ]
 },
 {
-  title: "Data Warehousing Concepts",
-  description: "Learn about data warehouse architecture, OLAP, and ETL best practices.",
-  category: "Data Engineer",
-  resources: [
-    { url: "https://www.tutorialspoint.com/dwh/index.htm", type: "Free" },
-    { url: "https://www.udemy.com/course/data-warehouse-concepts-data-modelling-etl-processing/", type: "Paid" }
-  ]
-},
-{
-  title: "Big Data with Hadoop",
-  description: "Understand big data concepts and work with Hadoop ecosystems like HDFS and MapReduce.",
-  category: "Data Engineer",
-  resources: [
-    { url: "https://hadoop.apache.org/docs/stable/", type: "Free" },
-    { url: "https://www.udemy.com/course/big-data-and-hadoop-for-beginners/", type: "Paid" }
-  ]
-},
-{
-  title: "Apache Spark for Data Engineers",
-  description: "Work with Spark for large-scale data processing and analytics.",
+  title: "Apache Spark Essentials",
+  description: "Learn distributed data processing with Apache Spark.",
   category: "Data Engineer",
   resources: [
     { url: "https://spark.apache.org/docs/latest/", type: "Free" },
@@ -1235,147 +1322,116 @@ const courses = [
   ]
 },
 {
-  title: "Cloud Data Engineering",
-  description: "Deploy and manage data solutions on cloud platforms like AWS, GCP, or Azure.",
+  title: "Data Warehousing Concepts",
+  description: "Explore data warehousing architecture and design patterns.",
   category: "Data Engineer",
   resources: [
-    { url: "https://cloud.google.com/learn/what-is-data-engineering", type: "Free" },
-    { url: "https://www.udemy.com/course/gcp-data-engineer-and-cloud-architect-guide/", type: "Paid" }
+    { url: "https://www.coursera.org/learn/dwdesign", type: "Free" },
+    { url: "https://www.udemy.com/course/data-warehousing/", type: "Paid" }
   ]
 },
 {
-  title: "Streaming Data with Kafka",
-  description: "Learn how to build real-time streaming data pipelines with Apache Kafka.",
+  title: "ETL Development with Python",
+  description: "Build ETL pipelines using Python and related libraries.",
   category: "Data Engineer",
   resources: [
-    { url: "https://kafka.apache.org/intro", type: "Free" },
-    { url: "https://www.udemy.com/course/apache-kafka-for-beginners/", type: "Paid" }
+    { url: "https://realpython.com/etl-data-pipeline-python/", type: "Free" },
+    { url: "https://www.udemy.com/course/etl-with-python/", type: "Paid" }
+  ]
+},
+{
+  title: "Cloud Data Engineering with GCP",
+  description: "Learn cloud-based data engineering using Google Cloud Platform.",
+  category: "Data Engineer",
+  resources: [
+    { url: "https://cloud.google.com/training/data-engineering", type: "Free" },
+    { url: "https://www.udemy.com/course/google-cloud-platform-data-engineer/", type: "Paid" }
+  ]
+},
+{
+  title: "Data Pipeline Automation",
+  description: "Automate data workflows with Apache Airflow.",
+  category: "Data Engineer",
+  resources: [
+    { url: "https://airflow.apache.org/docs/", type: "Free" },
+    { url: "https://www.udemy.com/course/airflow-the-complete-hands-on-course/", type: "Paid" }
   ]
 },{
   title: "Introduction to Product Management",
-  description: "Learn the basics of product management, roles, and responsibilities.",
+  description: "Learn the basics of product management and lifecycle.",
   category: "Product Management",
   resources: [
-    { url: "https://www.coursera.org/learn/uva-darden-digital-product-management", type: "Free" },
-    { url: "https://www.udemy.com/course/become-a-product-manager-learn-the-skills-get-a-job/", type: "Paid" }
+    { url: "https://www.coursera.org/learn/product-management", type: "Free" },
+    { url: "https://www.udemy.com/course/product-management-101/", type: "Paid" }
   ]
 },
 {
-  title: "Product Strategy",
-  description: "Understand how to define product vision, set goals, and align with business strategy.",
+  title: "Agile Product Management",
+  description: "Understand agile principles and apply them in product management.",
   category: "Product Management",
   resources: [
-    { url: "https://www.productplan.com/learn/product-strategy/", type: "Free" },
-    { url: "https://www.udemy.com/course/product-strategy/", type: "Paid" }
+    { url: "https://www.scrum.org/resources/what-is-product-management", type: "Free" },
+    { url: "https://www.udemy.com/course/agile-product-management/", type: "Paid" }
   ]
 },
 {
-  title: "Agile for Product Managers",
-  description: "Master Agile and Scrum methodologies for effective product development.",
+  title: "Roadmapping and Prioritization",
+  description: "Learn to create product roadmaps and prioritize features effectively.",
   category: "Product Management",
   resources: [
-    { url: "https://www.agilealliance.org/agile101/", type: "Free" },
-    { url: "https://www.udemy.com/course/agile-scrum-for-product-owner-and-product-management/", type: "Paid" }
+    { url: "https://www.productplan.com/roadmap-guide/", type: "Free" },
+    { url: "https://www.udemy.com/course/product-roadmap/", type: "Paid" }
   ]
 },
 {
-  title: "User Research and Personas",
-  description: "Learn techniques for understanding user needs and creating user personas.",
+  title: "User Story Mapping",
+  description: "Create user story maps to better understand user needs and workflow.",
   category: "Product Management",
   resources: [
-    { url: "https://www.nngroup.com/articles/personas/", type: "Free" },
-    { url: "https://www.udemy.com/course/user-research-for-user-experience-design/", type: "Paid" }
+    { url: "https://www.jpattonassociates.com/user-story-mapping/", type: "Free" },
+    { url: "https://www.udemy.com/course/user-story-mapping/", type: "Paid" }
   ]
 },
 {
-  title: "Product Roadmapping",
-  description: "Build and manage product roadmaps to communicate plans and priorities.",
+  title: "Product Metrics and Analytics",
+  description: "Measure product success using key performance indicators and analytics.",
   category: "Product Management",
   resources: [
-    { url: "https://www.aha.io/roadmapping/guide", type: "Free" },
-    { url: "https://www.udemy.com/course/product-roadmaps-creating-and-managing-roadmaps/", type: "Paid" }
+    { url: "https://www.intercom.com/resources/guides/product-metrics", type: "Free" },
+    { url: "https://www.udemy.com/course/product-management-analytics/", type: "Paid" }
   ]
 },
 {
-  title: "Data-Driven Product Decisions",
-  description: "Leverage analytics and metrics to guide product improvements and strategy.",
+  title: "Go-to-Market Strategy",
+  description: "Plan and execute successful product launches and marketing strategies.",
   category: "Product Management",
   resources: [
-    { url: "https://www.productplan.com/learn/data-driven-decision-making/", type: "Free" },
-    { url: "https://www.udemy.com/course/data-driven-decision-making-for-product-managers/", type: "Paid" }
-  ]
-},
-{
-  title: "Go-To-Market Strategy",
-  description: "Plan and execute a successful product launch with marketing and sales alignment.",
-  category: "Product Management",
-  resources: [
-    { url: "https://www.alexandercowan.com/go-to-market-strategy-template/", type: "Free" },
+    { url: "https://www.productplan.com/learn/go-to-market-strategy/", type: "Free" },
     { url: "https://www.udemy.com/course/go-to-market-strategy/", type: "Paid" }
   ]
-},{
-  title: "HTML & CSS Fundamentals",
-  description: "Learn the building blocks of the web: HTML for structure and CSS for styling.",
-  category: "Web Development",
-  resources: [
-    { url: "https://developer.mozilla.org/en-US/docs/Learn/HTML", type: "Free" },
-    { url: "https://www.udemy.com/course/html-and-css-for-beginners-crash-course-learn-fast-easy/", type: "Paid" }
-  ]
 },
 {
-  title: "JavaScript Basics",
-  description: "Understand core JavaScript concepts including variables, loops, and functions.",
-  category: "Web Development",
+  title: "Leadership and Stakeholder Management",
+  description: "Develop skills to manage teams and stakeholders effectively.",
+  category: "Product Management",
   resources: [
-    { url: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript", type: "Free" },
-    { url: "https://www.udemy.com/course/the-complete-javascript-course/", type: "Paid" }
+    { url: "https://www.mindtools.com/pages/article/newLDR_74.htm", type: "Free" },
+    { url: "https://www.udemy.com/course/leadership-stakeholder-management/", type: "Paid" }
   ]
-},
-{
-  title: "Responsive Web Design",
-  description: "Learn techniques to make websites mobile-friendly and responsive.",
-  category: "Web Development",
-  resources: [
-    { url: "https://www.freecodecamp.org/learn/2022/responsive-web-design/", type: "Free" },
-    { url: "https://www.udemy.com/course/responsive-web-design-html5-css3-complete-course/", type: "Paid" }
-  ]
-},
-{
-  title: "Frontend Frameworks - React",
-  description: "Master React for building modern, interactive user interfaces.",
-  category: "Web Development",
-  resources: [
-    { url: "https://react.dev/learn", type: "Free" },
-    { url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", type: "Paid" }
-  ]
-},
-{
-  title: "Version Control with Git & GitHub",
-  description: "Learn how to manage code and collaborate using Git and GitHub.",
-  category: "Web Development",
-  resources: [
-    { url: "https://git-scm.com/docs", type: "Free" },
-    { url: "https://www.udemy.com/course/git-and-github-bootcamp/", type: "Paid" }
-  ]
-},
-{
-  title: "Backend Basics with Node.js",
-  description: "Get started with server-side development using Node.js and Express.",
-  category: "Web Development",
-  resources: [
-    { url: "https://nodejs.org/en/learn", type: "Free" },
-    { url: "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/", type: "Paid" }
-  ]
-},
-{
-  title: "Full-Stack Project Development",
-  description: "Build complete full-stack applications using frontend and backend technologies.",
-  category: "Web Development",
-  resources: [
-    { url: "https://www.theodinproject.com/paths/full-stack-javascript", type: "Free" },
-    { url: "https://www.udemy.com/course/the-complete-web-development-bootcamp/", type: "Paid" }
-  ]
-},
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1391,4 +1447,4 @@ const courses = [
 
 ]
 
-export default courses;
+export default courses ;

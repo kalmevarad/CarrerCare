@@ -1,6 +1,6 @@
 .resume-container {
   width: 100%;
-  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   margin-top: 25px;
@@ -8,16 +8,44 @@
 
 .resume-form {
   width: 49%;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+  gap: 10px;
+  width: 100%;
+}
+.form-group details {
+  border: 1px solid purple;
+  border-radius: 10px;
+  width: 80%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+.form-group details summary {
+  color: purple;
+  font-weight: 600;
+  cursor:pointer;
+}
+/* actual resume */
 .actual-resume {
   width: 49%;
-  height: auto;
+  height: max-content;
   display: flex;
   flex-direction: row;
   border: 1px solid black;
+  border-left: 20px solid purple;
   padding: 10px;
   border-radius: 10px;
+  position: sticky;
+  top: 50px;
+  background-color: #ffffff;
 }
 .personal-detail {
   width: 30%;
@@ -26,23 +54,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-right:2px solid black;
+}
+.contact-detail {
+  width: 100%;
+  max-width: 100%;
 }
 .contact-detail ul {
   text-align: start;
   list-style-type: disc;
   padding-left: 20px;
+  width: 100%;
+  max-width: 100%;
 }
 .contact-detail li {
   margin: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
 }
 .skill ul {
   display: flex;
   width: 100%;
-  gap:45px;
+  gap: 45px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   list-style-type: disc;
+}
+.skill li {
+  font-size: 14px;
+  font-weight: 500;
 }
 .soft-skill {
   width: 100%;
@@ -55,6 +102,8 @@
 }
 .soft-skill li {
   margin: 10px;
+  font-size: 14px;
+  font-weight: 500;
 }
 .social-media-links {
   width: 100%;
@@ -70,21 +119,30 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-left: 2px solid black;
 }
-.Summary,
-p {
+.Summary {
+  margin-left: 15px;
+}
+.summary-container {
   font-size: 13px;
   width: 95%;
-  margin-left: 10px;
+  margin-left: 15px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.5;
 }
+
 .projects {
   width: 95%;
   padding: 10px;
   margin-left: 15px;
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .certification-hobbies {
   display: flex;
@@ -92,21 +150,63 @@ p {
   align-content: center;
   justify-content: space-evenly;
 }
-
+.education {
+  margin-left: 10px;
+}
+.education ul {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: 95%;
+}
+.experience {
+  margin-left: 15px;
+  font-size: 13px;
+}
+.comapnyName {
+  font-size: 21px;
+  font-weight: 400;
+}
+.work-experience {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: 95%;
+}
+.work-experience-dates {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 400;
+  color: purple;
+  font-size: 15px;
+}
+.starting-ending-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 95%;
+  gap: 15px;
+}
+.buttons
+{
+  display:flex;
+  flex-direction:row;
+}
 @media (max-width: 900px) {
   .resume-container {
     flex-direction: column;
     overflow-y: auto;
+    gap: 20px;
   }
-
   .resume-form {
-    width: 100%;
-    height: 50vh;
+    width: 90%;
+    margin: 0 auto;
   }
-
   .actual-resume {
-    width: 100%;
+    width: 90%;
     flex-direction: row;
+    margin: 0 auto;
   }
 
   .personal-detail {
@@ -120,11 +220,17 @@ p {
   .personal-detail ul {
     font-size: 11px;
     padding-left: 15px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .personal-detail li {
     font-size: 11px;
     margin: 5px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
   }
 
   .main-detail {
@@ -140,5 +246,10 @@ p {
     font-size: 11px;
     margin-left: 0;
     padding-left: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .skill ul {
+    gap: 15px;
   }
 }

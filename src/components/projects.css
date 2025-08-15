@@ -1,7 +1,15 @@
 h4 {
   margin-left: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  color:purple
 }
 li {
   font-size: 13px;
   list-style-type: disc;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
 }

@@ -10,27 +10,47 @@ const Courses = () => {
 	};
 
 
-	// Flatten resources so each resource is a separate card
-	const filteredCourses = (selectedCategory === "All" ? courses : courses.filter((course) => course.category === selectedCategory))
-		.flatMap((course) =>
+	// Filter and deduplicate courses by title and description
+	const filteredCourses = (() => {
+		const filtered = selectedCategory === "All"
+			? courses
+			: courses.filter((course) => course.category === selectedCategory);
+		const seen = new Set();
+		const unique = [];
+		for (const course of filtered) {
+			const key = course.title + '|' + course.description;
+			if (!seen.has(key)) {
+				seen.add(key);
+				unique.push(course);
+			}
+		}
+		// Flatten resources for each unique course
+		return unique.flatMap((course) =>
 			Array.isArray(course.resources)
 				? course.resources.map((resource, idx) => {
-						const isObj = typeof resource === 'object' && resource !== null;
-						return {
-							...course,
-							resource: isObj ? resource : { url: resource },
-							resourceIdx: idx
-						};
-					})
+					const isObj = typeof resource === 'object' && resource !== null;
+					return {
+						...course,
+						resource: isObj ? resource : { url: resource },
+						resourceIdx: idx
+					};
+				})
 				: []
 		);
+	})();
 
 	return (
 		<div className="p-6">
-			{/* Dropdown filter */}
+			<h1
+				className="text-4xl font-extrabold text-center mb-10 tracking-wider bg-gradient-to-r from-blue-400 via-black to-blue-400 bg-clip-text text-transparent drop-shadow-lg uppercase"
+				style={{ letterSpacing: '0.1em', textShadow: '0 2px 8px rgba(59,130,246,0.2)' }}
+			>
+				COURSE RECOMMENDATION
+			</h1>
+			
 			<CourseDropdown value={selectedCategory} onChange={handleDropdownChange} />
 
-			{/* Course Cards */}
+			
 			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6">
 				{filteredCourses.map((course, idx) => {
 					const { resource, resourceIdx, title, description, category } = course;

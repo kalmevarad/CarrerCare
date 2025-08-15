@@ -1,5 +1,6 @@
 import "./Contact.css";
 import { Phone , Mail , MapPin, Instagram , Linkedin , Twitter, Twitch , Youtube} from "lucide-react"
+import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 
 
@@ -9,12 +10,9 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-
     formData.append("access_key", "50ab04b6-2e87-495b-ba9e-68ccfbca50a1");
-
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -23,16 +21,15 @@ const Contact = () => {
       },
       body: json
     }).then((res) => res.json());
-
     if (res.success) {
-      console.log("Success", res);
+      toast.success("Message Submitted Successfully !");
+      event.target.reset();
     }
   };
-const notify =()=>toast.success("Message Submitted Successfully !");
    
  return (
     <>
-       
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="bg-gray-100">
        <div className=" flex justify-center items-center w-full min-h-screen"> 
           <div className=" flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 bg-cyan-700 w-full max-w-4xl p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
@@ -113,7 +110,7 @@ const notify =()=>toast.success("Message Submitted Successfully !");
                    rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300 " />
                   
                 </div>
-                <button onClick={notify} className=" hover:bg-cyan-600 cursor-pointer inline-block bg-cyan-700 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm self-end">send message</button>
+                <button type="submit" className=" hover:bg-cyan-600 cursor-pointer inline-block bg-cyan-700 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm self-end">send message</button>
                </form>
               </div>
             </div>  
