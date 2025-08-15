@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 import Navbar from "./../components/navbar.jsx";
 import Button from "./Button";
 
-const ProjectCards = () => {
+const Project = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects = selectedCategory === "All"
@@ -50,4 +50,4 @@ const ProjectCards = () => {
   );
 };
 
-export default ProjectCards;
+export default Project;
