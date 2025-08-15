@@ -8,6 +8,7 @@ import User from "./pages/user.jsx"
  import Contact from "./pages/Contact.jsx"
  import Resume from "./pages/resume.jsx"
  import Courses from "./pages/Courses.jsx"
+import Project from "./pages/project.jsx"
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        {/* <Routes path="/carrer" element={<Carrer />}></Routes>*/}
+        <Route path="/project" element={<Project />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/courses" element={<Courses />}></Route>
         <Route path="/about" element={<About />}></Route>

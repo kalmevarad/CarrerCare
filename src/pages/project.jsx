@@ -1,8 +1,8 @@
 import { useState } from "react";
-import projects from "./projects"; 
-import Dropdown from "./Dropdown"; 
+import projects from "../data/ProjectResourses.js";
+import Dropdown from "../components/Dropdown.jsx"; 
 import Navbar from "./../components/navbar.jsx";
-import Button from "./Button";
+import Button from "../components/button.jsx";
 
 const Project = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -15,7 +15,7 @@ const Project = () => {
     <>
       <Navbar />
       <div className="p-6">
-        
+
         <Dropdown value={selectedCategory} onChange={setSelectedCategory} />
 
            {/* Project Cards */}
