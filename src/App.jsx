@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx"
 import Login from "./pages/login.jsx"
@@ -8,6 +8,7 @@ import User from "./pages/user.jsx"
  import Contact from "./pages/Contact.jsx"
  import Resume from "./pages/resume.jsx"
  import Courses from "./pages/Courses.jsx"
+
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/user" element={<User />}></Route>
         <Route path="/resume" element={<Resume />}></Route>
+        
         <Route path="*"element={<h1>error 404 page not found</h1>}></Route>
       </Routes>
       </BrowserRouter>
