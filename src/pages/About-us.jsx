@@ -1,139 +1,72 @@
 import React from 'react';
-import './About-us.css';
 import Navbar from './../components/navbar.jsx';
 import Button from './../components/button.jsx';
-import { Github, Linkedin, ExternalLink} from "lucide-react";
+import { Github, Linkedin, ExternalLink } from "lucide-react";
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
-      <div className="about-page">
-    
-           <div className="summary-section">
-             <h1>About CareerCare</h1>
-             <p>
-             Welcome to CareerCare, your personalized guide to exploring the world of careers!<br />We created this platform to make career planning simpler, smarter, and more inspiring for students and learners.Whether you're unsure about your future path or curious about the skills needed for your dream job, Career Compass helps you discover various career options,essential skills, and relevant courses – all in one place.<br />Our website is built using HTML, CSS, JavaScript, and React JS, combining creativity and technology to deliver an interactive and informative experience.Careercare is designed to empower you to make confident and informed career decisions.<br />Let’s turn confusion into clarity – start exploring today!
-            </p>
-             <Button name="Explore Careers" />
-           </div>
-             <div className="team-section">
-               <h2 className="team-heading">Our Team</h2>
-                <div className="team-cards">
-                   <div className="member-card">
-                       <h3>Tanishka Shivarkar</h3>
-                         <div className="social-links">
-                           <a href="https://github.com/TanishkaShivarkar" target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/tanishka-shivarkar-566351375/" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/tanishka_3112" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
 
-                    <div className="member-card">
-                       <h3>Shrawani Mirashe</h3>
-                         <div className="social-links">
-                           <a href=" https://github.com/Shrawani290" target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/shrawani-mirashe-a1430228b" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/shrawani29" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
+      <div className="max-w-6xl mx-auto px-6 py-20 space-y-16">
+        
+        {/* ---------- ABOUT SUMMARY ---------- */}
+        <div className="bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+          <h1 className="text-4xl font-bold text-cyan-400 tracking-wide mb-6">
+            About CareerCare
+          </h1>
 
-                    <div className="member-card">
-                       <h3>Satyam Katkade</h3>
-                         <div className="social-links">
-                           <a href="https://github.com/TanishkaShivarkar" target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/tanishka-shivarkar-566351375/" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/tanishka_3112" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
+          <p className="text-gray-300 leading-relaxed text-lg space-y-3">
+            Welcome to CareerCare, your personalized guide to exploring the world of careers! 
+            We created this platform to make career planning simpler, smarter, and more inspiring 
+            for students and learners.
+            <br /><br />
+            Whether you're unsure about your future path or curious about the 
+            skills needed for your dream job, CareerCare helps you discover various career options, 
+            essential skills, and relevant courses – all in one place.
+            <br /><br />
+            Our website is built using HTML, CSS, JavaScript, and React JS, combining creativity 
+            and technology to deliver an interactive and informative experience. CareerCare is designed 
+            to empower you to make confident and informed career decisions.
+            <br /><br />
+            Let’s turn confusion into clarity – start exploring today!
+          </p>
 
-                    <div className="member-card">
-                       <h3>Anshuman Morey</h3>
-                         <div className="social-links">
-                           <a href="https://github.com/ANSHUMANMOREY7 " target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/anshuman-morey/" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/anshumxnn_27" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
-
-
-                      <div className="member-card">
-                       <h3>Varad Kalme</h3>
-                         <div className="social-links">
-                           <a href="https://github.com/kalmevarad" target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/varad-kalme-094073375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/kalmevarad" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
-
-                   <div className="member-card">
-                       <h3>Bhushan</h3>
-                         <div className="social-links">
-                           <a href="https://github.com/TanishkaShivarkar" target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/tanishka-shivarkar-566351375/" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/tanishka_3112" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
-
-
-                  <div className="member-card">
-                       <h3>Vinod Nangare</h3>
-                         <div className="social-links">
-                           <a href="https://github.com/TanishkaShivarkar" target="_blank">
-                           <Github size={20} />
-                           </a>
-                            <a href="https://www.linkedin.com/in/tanishka-shivarkar-566351375/" target="_blank">
-                           <Linkedin size={20} />
-                           </a>
-                            <a href="https://peerlist.io/tanishka_3112" target="_blank">
-                           <ExternalLink size={20} />
-                            </a>
-                         </div>
-                   </div>
-
-
-                </div>
-             </div>
+          <div className="mt-6">
+            <button type="submit" className=" hover:bg-cyan-600 cursor-pointer inline-block bg-gray-700 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm self-end">Explore Careers</button>
+          </div>
         </div>
+
+        {/* ---------- TEAM SECTION ---------- */}
+        <div className="space-y-8">
+          <h2 className="text-3xl font-bold text-center text-cyan-300 tracking-wide ">
+            Our Team
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center align-items-center">
+            
+            {/* TEAM CARD */}
+            <div className="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-xs flex flex-col items-center text-center hover:scale-105 transition transform duration-300">
+              <h3 className="text-xl font-semibold text-white">Varad Kalme</h3>
+
+              <div className="flex space-x-4 mt-4 text-cyan-400">
+                <a href="https://github.com/kalmevarad" target="_blank" className="hover:text-white">
+                  <Github size={22} />
+                </a>
+                <a href="https://www.linkedin.com/in/varad-kalme-094073375" target="_blank" className="hover:text-white">
+                  <Linkedin size={22} />
+                </a>
+                <a href="https://peerlist.io/kalmevarad" target="_blank" className="hover:text-white">
+                  <ExternalLink size={22} />
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-    
-    
+    </div>
   );
 };
 

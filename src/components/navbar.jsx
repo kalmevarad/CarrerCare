@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
 import defaultuser from "../assets/img/user.png";
+import logo from "../assets/img/logo.png";
 
 const Navbar = () => {
   const [userImg, setUserImg] = useState("");
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <h2 className="logo">Logo</h2>
+      <h2 className="logo"><img src={logo} alt="Logo" className="h-14" /></h2>
       <div className="navbar-content">
         <Link
           to="/"
@@ -26,10 +27,10 @@ const Navbar = () => {
           Home
         </Link>
         <Link
-          to="/carrer"
-          className={location.pathname === "/carrer" ? "active" : "navbar-item"}
+          to="/contact"
+          className={location.pathname === "/contact" ? "active" : "navbar-item"}
         >
-          Career
+          Contact
         </Link>
         <Link
           to="/courses"

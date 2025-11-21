@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import courses from "../data/CourseResources";
 import CourseDropdown from "../components/CourseDropdown";
+import Navbar from "../components/navbar";
 
 const Courses = () => {
 	const [selectedCategory, setSelectedCategory] = useState("All");
@@ -40,6 +41,8 @@ const Courses = () => {
 	})();
 
 	return (
+		<>
+		<Navbar />
 		<div className="p-6">
 			<h1
 				className="text-4xl font-extrabold text-center mb-10 tracking-wider bg-gradient-to-r from-blue-400 via-black to-blue-400 bg-clip-text text-transparent drop-shadow-lg uppercase"
@@ -90,6 +93,7 @@ const Courses = () => {
 				})}
 			</div>
 		</div>
+		</>
 	);
 };
 

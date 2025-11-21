@@ -2,6 +2,7 @@ import "./Contact.css";
 import { Phone , Mail , MapPin, Instagram , Linkedin , Twitter, Twitch , Youtube} from "lucide-react"
 import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
+import Navbar from "../components/navbar";
 
 
 
@@ -29,10 +30,11 @@ const Contact = () => {
    
  return (
     <>
+      <Navbar />
       <Toaster position="top-center" reverseOrder={false} />
       <div className="bg-gray-100">
        <div className=" flex justify-center items-center w-full min-h-screen"> 
-          <div className=" flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 bg-cyan-700 w-full max-w-4xl p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
+          <div className=" flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 bg-gray-800 w-full max-w-4xl p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
             <div className="flex flex-col space-y-8 justify-between"> 
                <div>
                  <h1 className=" font-bold text-4xl tracking-wide">contact us </h1>
@@ -110,7 +112,7 @@ const Contact = () => {
                    rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300 " />
                   
                 </div>
-                <button type="submit" className=" hover:bg-cyan-600 cursor-pointer inline-block bg-cyan-700 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm self-end">send message</button>
+                <button type="submit" className=" hover:bg-cyan-600 cursor-pointer inline-block bg-gray-700 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm self-end">send message</button>
                </form>
               </div>
             </div>  
