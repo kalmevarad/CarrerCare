@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
+import { Link } from "react-router"; 
 const Home = ()=>
 {
 
@@ -86,9 +87,11 @@ const Home = ()=>
             <p className="text-lg text-gray-700 mb-6">
               Create job-ready resumes with smart templates tailored for freshers and experienced professionals.
             </p>
-            <button className="bg-white border border-purple-600 text-purple-700 hover:bg-purple-50 px-5 py-2 rounded-lg font-semibold shadow-sm">
-              Start Building →
-            </button>
+            <Link to="/resume">
+              <button className="bg-white border border-purple-600 text-purple-700 hover:bg-purple-50 px-5 py-2 rounded-lg font-semibold shadow-sm">
+                Start Building →
+              </button>
+            </Link>
           </div>
           <div className="relative flex items-center justify-center h-[340px] w-full lg:w-[600px]">
             <img
@@ -120,9 +123,11 @@ const Home = ()=>
                   <div className="p-5 space-y-2">
                     <h3 className="text-base font-semibold text-white">{feature.title}</h3>
                     <p className="text-sm text-gray-400">{feature.description}</p>
-                    <button className="text-purple-400 hover:underline text-sm">
-                      Explore {feature.title}
-                    </button>
+                    <Link to={feature.title === "Course Resources" ? "/courses" : "/project"}>
+                      <button className="text-purple-400 hover:underline text-sm">
+                        Explore {feature.title}
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}
