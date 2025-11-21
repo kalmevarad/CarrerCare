@@ -172,11 +172,12 @@ const Home = ()=>
               alt="Placement Predictor"
               className="w-full h-auto rounded-lg shadow-md"
             />
- <footer/>
+
           </div>
         </div>
         
       </section>
+       <Footer/>
     
     </div>
     );
