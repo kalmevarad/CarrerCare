@@ -44,7 +44,7 @@ const Home = ()=>
         className="h-[80vh] bg-cover bg-center flex items-center justify-center text-white px-4"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1581093588401-4bff6a455c91?auto=format&fit=crop&w=1470&q=80')",
+            "url('../../public/main.jpg')",
         }}
       >
         <div className="bg-black bg-opacity-80 p-10 rounded-xl max-w-2xl text-center">
